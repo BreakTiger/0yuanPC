@@ -1,0 +1,399 @@
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.16rem;
+    font-family: A03-;
+    font-weight: 500;
+    background: #FFFFFF;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+span {
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #939393;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #939393;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #939393;
+}
+
+input,
+select,
+textarea,
+button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    border: 0;
+    background: transparent;
+    color: #707070;
+}
+
+textarea {
+    resize: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    -moz-box-shadow: 0 0 0 1000px white inset;
+    -ms-box-shadow: 0 0 0 1000px white inset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: NotoSansHans-Bold;
+    font-weight: bold;
+    color: #161616;
+}
+
+/*字体大小*/
+.fz-16 {
+    font-size: 0.16rem;
+}
+
+.fz-18 {
+    font-size: 0.18rem;
+}
+
+.fz-26{
+    font-size: 0.26rem;
+}
+
+
+/* 字体颜色 */
+.c-7b {
+    color: #7C7B7B
+}
+
+.c-6a {
+    color: #FE366A;
+}
+
+.c-60 {
+    color: #666060;
+}
+
+.c-ff {
+    color: #ffff;
+}
+
+.c-99{
+    color: #999999;
+}
+.c-8a{
+    color: #8C898A;
+}
+
+.c-66{
+    color: #666666;
+}
+
+.c-4f{
+    color: #4C98FF;
+}
+
+.c-b3{
+    color: #F7E4B3;
+}
+
+
+/* 字体粗细 */
+.f-w4 {
+    font-weight: 400;
+}
+
+.f-w5 {
+    font-weight: 500;
+}
+
+.f-wb {
+    font-weight: bold;
+}
+
+
+/*字体样式*/
+.f-fm {
+    font-family: MicrosoftYaHei;
+}
+
+.f-fb {
+    font-family: MicrosoftYaHei-Bold;
+}
+
+
+/* 背景色 */
+.b-tor {
+    background: linear-gradient(to right, #FFDEE7, #ffff);
+}
+
+.b-e2{
+    background: #E2E2E2;
+}
+
+
+
+
+
+/*浮动样式*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+/*弹性布局*/
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.fl-align {
+    align-items: center;
+}
+
+.fl-j {
+    justify-content: center;
+}
+
+.fl-jsb {
+    justify-content: space-between;
+}
+
+.fl-jsa {
+    justify-content: space-around;
+}
+
+
+/*超出显示省略号 */
+/* 单行 */
+.clamp1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 俩行 */
+.clamp2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/* 三行 */
+.clamp3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+/*底部线条*/
+.lineBottom {
+    position: relative;
+    z-index: 0;
+}
+
+.lineBottom::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.02rem;
+    border-bottom: 0.04rem solid #0070D3;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    margin-top: 0.21rem;
+}
+
+.lineBottom div,
+.lineBottom span,
+.lineBottom a .lineBottom li {
+    position: relative;
+}
+
+
+/*右线条*/
+.lineRight {
+    position: relative;
+    z-index: 0;
+}
+
+.lineRight::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 0.04rem solid #EBEBEB;
+    -webkit-box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    box-sizing: border-box;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    padding-left: 0.29rem;
+}
+
+.lineRight div,
+.lineRight span,
+.lineRight a {
+    position: relative;
+}
+
+/*容器*/
+#containers {
+    width: 100%;
+    height: auto;
+    background: #F2F2F2;
+    position: relative;
+}
+
+#header,
+#footer {
+    width: 100%;
+}
+
+.on {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+.hides {
+    display: none;
+}
+
+.ons {
+    display: block;
+}
+
+
+.v-h {
+    visibility: hidden
+}
+
+
+/* 导航部分样式 start */
+
+
+#navction>ul>li {
+    margin-bottom: 0.36rem;
+    cursor: pointer;
+    position: relative;
+}
+
+#navction>ul>li:first-child {
+    margin-top: 0.6rem;
+}
+
+#navction>ul>li>span,
+#navction>ul>li .list-item {
+    margin-left: 0.6rem;
+}
+
+#navction>ul>li .list-item>span {
+    display: block;
+    width: 0.95rem;
+    margin-right: 0.49rem;
+}
+
+.scend-list {
+    margin-top: 0.36rem;
+}
+
+.scend-list>ul>li {
+    width: 100%;
+    height: 0.52rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.scend-list>ul>li .line {
+    display: block;
+    width: 0.04rem;
+    height: 0.52rem;
+    background: rgba(254, 54, 106, 1);
+    box-shadow: 2px 0px 4px 0px rgba(217, 14, 67, 0.4);
+}
+
+.scend-list>ul>li>span:nth-child(2) {
+    margin-left: 0.79rem;
+}
+
+.scend-list-name {
+    text-shadow: 0rem 0.02rem 0.01rem rgba(254, 54, 106, 0.5);
+}
+
+/* 导航部分样式 end */

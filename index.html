@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>0元夺宝</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/paging.css">
+    <style>
+        #navction {
+            width: 2.4rem;
+            background: #ffffff;
+        }
+
+        #Tab-content {
+            width: 16.8rem;
+        }
+
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 200;
+        }
+
+        .prompt {
+            width: 6rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+            z-index: 300;
+            margin: auto;
+        }
+
+        .prompt .title {
+            text-align: center;
+            padding: 0.2rem 0rem;
+            background: #FE366A;
+            border-radius: 0.1rem 0.1rem 0 0;
+            margin-bottom: 0.2rem;
+        }
+
+        .prompt .prompt-info p {
+            margin-bottom: 0.17rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .prompt .prompt-info p span:first-child {
+            display: inline-block;
+            width: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .prompt .prompt-info p span:last-child {
+            display: inline-block;
+            width: 4.1rem;
+        }
+
+        .prompt .prompt-info p:nth-child(5) {
+            margin-bottom: 0.3rem;
+        }
+
+        .prompt .prompt-info p:last-child {
+            margin-bottom: 0.3rem;
+        }
+
+        .prompt .prompt-info p>button {
+            cursor: pointer;
+            border-radius: 0.21rem;
+        }
+
+        .prompt .prompt-info p .canel {
+            width: 1.06rem;
+            height: 0.42rem;
+            border: 0.01rem solid rgba(254, 54, 106, 1);
+            margin-left: 1.2rem;
+            margin-right: 1.48rem;
+        }
+
+        .prompt .prompt-info p .sure {
+            width: 1.06rem;
+            height: 0.42rem;
+            background: rgba(254, 54, 106, 1);
+        }
+
+        .title-line {
+            width: 100%;
+            background: #ffffff;
+            padding-top: 0.15rem;
+            padding-bottom: 0.17rem;
+            margin-bottom: 0.2rem;
+            border: 0.01rem solid #F2F2F2;
+        }
+
+        .title-line>span:first-child {
+            margin-left: 0.3rem;
+        }
+
+        .sign {
+            width: 16.20rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+        }
+
+        .title-box {
+            width: 4.5rem;
+            height: 1.27rem;
+            background: url(images/code-box.png) no-repeat center/4.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .title-box>p {
+            text-align: center;
+        }
+
+        .title-box>p:first-child {
+            margin-top: 0.17rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .left-box,
+        .right-box {
+            width: 4.7rem;
+            height: 2.3rem;
+            background: url(images/box-one.png) no-repeat center/4.7rem;
+            position: relative;
+        }
+
+        .mid-box {
+            width: 4.7rem;
+            height: 2.5rem;
+            background: url(images/box-two.png) no-repeat center/4.7rem;
+            position: relative;
+        }
+
+        .left-box .title,
+        .right-box .title,
+        .mid-box .title {
+            width: 2.64rem;
+            height: 0.94rem;
+            background: url(images/title.png) no-repeat center/2.64rem;
+            position: absolute;
+            top: -0.08rem;
+            z-index: 100;
+        }
+
+        .left-box .title,
+        .right-box .title {
+            left: 1.1rem;
+        }
+
+        .mid-box .title {
+            left: 1.08rem;
+        }
+
+        .left-box .title>p,
+        .right-box .title>p,
+        .mid-box .title>p {
+            text-align: center;
+            margin-top: 0.30rem;
+        }
+
+        .user-header {
+            width: 0.76rem;
+            height: 0.76rem;
+            border-radius: 50%;
+            margin-right: 0.1rem;
+            margin-left: 1.17rem;
+        }
+
+        .left-box .info {
+            margin-top: 0.6rem;
+        }
+
+        .right-box .add-info {
+            margin-top: 0.75rem;
+        }
+
+        .right-box .add-info>p>span:first-child {
+            margin-left: 0.62rem;
+        }
+
+        .user-info>p {
+            margin-bottom: 0.12rem;
+        }
+
+        .user-info>p:first-child {
+            margin-top: 0.12rem;
+        }
+
+        .add-info>P {
+            margin-bottom: 0.12rem;
+        }
+
+        .add-info>P:first-child {
+            margin-top: 0px;
+        }
+
+        .prize-img {
+            width: 0.86rem;
+            height: 0.98rem;
+            margin-bottom: 0.1rem;
+            margin-top: 0.66rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containers" class="flex row">
+        <!-- 左侧导航 -->
+        <nav id="navction">
+            <ul>
+                <li>
+                    <span class="fz-16 f-fwm c-7b">首页</span>
+                </li>
+                <li>
+                    <div class="list-item flex row fl-alig">
+                        <span class="fz-16 f-fwm c-7b">APP首页设置</span>
+                        <i class="icon m-icon"></i>
+                        <i class="icon d-icon hide"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-item flex row fl-alig">
+                        <span class="fz-16 f-fwm c-7b">APP内容管理</span>
+                        <i class="icon m-icon"></i>
+                        <i class="icon d-icon hide"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-item flex row fl-alig">
+                        <span class="fz-16 f-fwm c-7b">免单商品</span>
+                        <i class="icon m-icon"></i>
+                        <i class="icon d-icon hide"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-item flex row fl-alig">
+                        <span class="fz-16 f-fwm c-6a f-wb">0元夺宝</span>
+                        <i class="icon m-icon hide"></i>
+                        <i class="icon d-icon "></i>
+                    </div>
+                    <div class="scend-list">
+                        <ul>
+                            <li class="b-tor">
+                                <span class="line"></span>
+                                <span class="scend-list-name fz-16 c-6a f-fwm f-wb">发布夺宝</span>
+                            </li>
+                            <li>
+                                <span class="line v-h"></span>
+                                <span class="fz-16 f-fwm c-7b">夺宝记录</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="fz-16 f-fwm c-7b">拉新活动</span>
+                </li>
+                <li>
+                    <span class="fz-16 f-fwm c-7b">我的工具</span>
+                </li>
+                <li>
+                    <span class="fz-16 f-fwm c-7b">消息推送</span>
+                </li>
+                <li>
+                    <span class="fz-16 f-fwm c-7b">免单商品信息</span>
+                </li>
+            </ul>
+        </nav>
+        <!-- 右侧内容 -->
+        <div id="Tab-content">
+            <div class="Tab-three flex col fl-align">
+                <div class="title-line">
+                    <span class="fz-18 f-fwb f-wb c-6a">夺宝明细</span>
+                    <span class="fz-16 c-4f f-fm f-wb">>夺宝记录</span>
+                </div>
+
+                <!-- 开奖 -->
+                <div class="opens">
+                    <div class="sign flex col fl-align">
+                        <div class="title-box">
+                            <p class="fz-18 c-ff f-fmb f-wb">本次中奖码</p>
+                            <p class="fz-26 c-b3 f-wb f-fmb">10010588</p>
+                        </div>
+                        <div class="sign-line flex row fl-align">
+
+                            <div class="left-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">中奖用户</p>
+                                </div>
+
+                                <div class="info flex row fl-align">
+                                    <img src="resources/head.png" alt="" class="user-header">
+                                    <div class="user-info">
+                                        <p class="c-6a fz-16">
+                                            <span>账号：</span>
+                                            <span>15800000000</span>
+                                        </p>
+                                        <p class="c-6a fz-16">
+                                            <span>微信：</span>
+                                            <span>565656</span>
+                                        </p>
+                                        <p class="c-6a fz-16">
+                                            <span>昵称：</span>
+                                            <span>小小子</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="mid-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">本期奖品</p>
+                                </div>
+                                <div class="prize flex col fl-align">
+                                    <img src="resources/yue.jpg" alt="" class="prize-img">
+                                    <span class="fz-16 c-6a">地面的和坏坏坏</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="right-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">收货地址</p>
+                                </div>
+                                <div class="add-info">
+                                    <p class="c-6a fz-16">
+                                        <span>姓 名：</span>
+                                        <span>小小子</span>
+                                    </p>
+                                    <p class="c-6a fz-16">
+                                        <span>联系电话：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="c-6a fz-16">
+                                        <span>收货地址：</span>
+                                        <span>广州市白云区永泰新村XXX街道52号</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 未开奖 -->
+                <div class="unopen">
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- 遮罩 -->
+    <div class="cover flex row fl-align hides">
+
+        <!-- 提示框 -->
+        <div class="prompt">
+
+            <div class="title fz-18 c-ff f-fwb">
+                确认发布该商品为夺宝商品
+            </div>
+
+            <div class="prompt-info">
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品标题：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">驼背矫正器韩国背背佳隐形矫正带抖音放驼背神器</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品链接：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">https://uland.taobao.com/item.htm?id=54864814835</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品价格：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">250元</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">到 手 价：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">200元</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">所需人数：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">6000人</span>
+                </p>
+                <p>
+                    <button class="canel fz-16 c-6a">取消</button>
+                    <button class="sure fz-16 c-ff">确认发布</button>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/paging.js"></script>
+<script src="js/common.js"></script>
+<script>
+    // 窗口大小发生变化刷新
+    $(window).resize(function () {
+        location.reload()
+    });
+
+    $(function () {
+
+        // tab内容有选中的导航的项来决定
+        // $('#Tab-content').load('release.html');
+        // $('#Tab-content').load('record.html')
+
+
+
+    });
+</script>
+
+</html>

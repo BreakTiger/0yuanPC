@@ -1,0 +1,173 @@
+<!-- 发布 -->
+<style>
+    .Tab-one .title-line {
+        width: 100%;
+        background: #ffffff;
+        padding-top: 0.15rem;
+        padding-bottom: 0.17rem;
+        border: 0.01rem solid #F2F2F2;
+        margin-bottom: 0.3rem;
+    }
+
+    .Tab-one .title-line>span {
+        margin-left: 0.3rem;
+    }
+
+    .input-content {
+        width: 16.2rem;
+        height: 9.1rem;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 0.1rem;
+    }
+
+    .input-content .line {
+        margin-top: 0.2rem;
+    }
+
+    .input-content .line>span {
+        display: block;
+        width: 1.6rem;
+        text-align: right;
+        margin-left: 0.17rem;
+        margin-right: 0.04rem;
+    }
+
+    .input-content .line .put-box {
+        width: 8rem;
+        height: 0.5rem;
+        background: rgba(255, 255, 255, 1);
+        border: 0.01rem solid rgba(226, 226, 226, 1);
+    }
+
+    .input-content .line .put-box>i {
+        margin-left: 0.2rem;
+        margin-right: 0.04rem;
+    }
+
+    .input-content .line .put-box>input {
+        width: 95%;
+        height: 100%;
+    }
+
+    .input-content .line>input {
+        width: 8rem;
+        height: 0.5rem;
+        background: rgba(255, 255, 255, 1);
+        border: 0.01rem solid rgba(226, 226, 226, 1);
+        text-indent: 0.2rem;
+    }
+
+    .snedBtn {
+        width: 1.06rem;
+        height: 0.42rem;
+        background: rgba(254, 54, 106, 1);
+        border-radius: 0.21rem;
+        margin-left: 1.8rem;
+        margin-top: 0.4rem;
+        cursor: pointer;
+    }
+
+    .Up-box .s-img {
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        margin-right: 0.1rem;
+        margin-left: 0.09rem;
+    }
+
+    .Up-box .s-img>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .Up-box .add-box {
+        width: 1rem;
+        height: 1rem;
+        border: 0.01rem solid rgba(226, 226, 226, 1);
+    }
+
+    .Up-box .add-box .add-icon-one,
+    .Up-box .add-box .add-icon-two {
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
+        z-index: 100;
+        cursor: pointer;
+    }
+</style>
+
+<div class="Tab-one flex col fl-align">
+    <!-- 标题 -->
+    <div class="title-line">
+        <span class="fz-18 f-fwb f-wb c-6a">新增夺宝商品</span>
+    </div>
+    <!-- 输入内容 -->
+    <div class="input-content">
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">宝贝链接:</span>
+            <div class="put-box flex row fl-align">
+                <i class="icon link-icon"></i>
+                <input type="text" placeholder="请粘贴或输入宝贝链接">
+            </div>
+        </div>
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">优惠券链接:</span>
+            <div class="put-box flex row fl-align">
+                <i class="icon link-icon"></i>
+                <input type="text"
+                    placeholder="示例：https://uland.taobao.com/quan/detail?sellerId=xxxxx&activityId=xxxxx">
+            </div>
+        </div>
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">宝贝短标题:</span>
+            <input type="text" placeholder="请输入宝贝标题">
+        </div>
+
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">商品主图:</span>
+            <div class="Up-box flex row fl-align">
+                <!-- 预览图 -->
+                <div class="s-img">
+                    <img src="resources/yue.jpg">
+                    <i class="icon close-icon"></i>
+                </div>
+                <!-- 添加框 -->
+                <div class="add-box flex row fl-align">
+                    <i class="icon add-icon-one hide"></i>
+                    <span class="icon add-icon-two "></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">原价(元):</span>
+            <input type="text" placeholder="请输入原价">
+        </div>
+
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">到手价(元):</span>
+            <input type="text" placeholder="请输入到手价">
+        </div>
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">佣金比例(元):</span>
+            <input type="text" placeholder="请输入佣金比例">
+        </div>
+        <div class="line flex row fl-align">
+            <span class="fz-16 c-60 f-fm">该活动所需人数(人):</span>
+            <input type="text" placeholder="请输入人数">
+        </div>
+
+        <button class="snedBtn c-ff fz-16">立即发布</button>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
