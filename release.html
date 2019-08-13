@@ -59,7 +59,9 @@
 
     .snedBtn {
         width: 1.06rem;
-        height: 0.42rem;
+        text-align: center;
+        /* height: 0.42rem; */
+        padding: 0.1rem 0;
         background: rgba(254, 54, 106, 1);
         border-radius: 0.21rem;
         margin-left: 1.8rem;
@@ -112,7 +114,7 @@
             <span class="fz-16 c-60 f-fm">宝贝链接:</span>
             <div class="put-box flex row fl-align">
                 <i class="icon link-icon"></i>
-                <input type="text" placeholder="请粘贴或输入宝贝链接">
+                <input type="text" placeholder="请粘贴或输入宝贝链接" class="link">
             </div>
         </div>
         <div class="line flex row fl-align">
@@ -120,12 +122,12 @@
             <div class="put-box flex row fl-align">
                 <i class="icon link-icon"></i>
                 <input type="text"
-                    placeholder="示例：https://uland.taobao.com/quan/detail?sellerId=xxxxx&activityId=xxxxx">
+                    placeholder="示例：https://uland.taobao.com/quan/detail?sellerId=xxxxx&activityId=xxxxx" class="c-link">
             </div>
         </div>
         <div class="line flex row fl-align">
             <span class="fz-16 c-60 f-fm">宝贝短标题:</span>
-            <input type="text" placeholder="请输入宝贝标题">
+            <input type="text" placeholder="请输入宝贝标题" class="gname">
         </div>
 
         <div class="line flex row fl-align">
@@ -162,12 +164,42 @@
             <input type="text" placeholder="请输入人数">
         </div>
 
-        <button class="snedBtn c-ff fz-16">立即发布</button>
-
+        <div class="snedBtn c-ff fz-16">
+            立即发布
+        </div>
     </div>
-
 </div>
 
-<script>
 
+<script>
+    $(function () {
+
+        // 上传图片
+
+        // 立即发布
+        $('.snedBtn').on('click', function () {
+            // 获取数据
+            // 1.宝贝链接
+            let links = $('.link').val();
+            console.log('宝贝链接:',links);
+
+            // 2.优惠券链接
+            let clink = $('.c-link').val()
+            console.log('优惠券链接:',clink)
+
+            // 3.短标题
+            let gname = $('.gname').val();
+            console.log('短标题:',gname);
+
+            // 4.商品主图数据[数组类型或者拼接]
+
+            // 5.原价
+
+            // 6.到手价
+
+            // 7.佣金比例
+
+            // 8.所需人数
+        })
+    })
 </script>

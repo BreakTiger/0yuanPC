@@ -1,5 +1,5 @@
 /* common.js文件，创建于2019/04/28 author:wen*/
-var ajaxUrl = '';//请求域名
+var ajaxUrl = 'http://fdadmin.efengqing.com';//请求域名
 var imgUrl = '';//图片链接
 /*封装通用ajax请求*/
 var userToken = localData('get', 'userLoginInfo').token || '';

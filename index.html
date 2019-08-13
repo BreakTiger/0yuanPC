@@ -21,6 +21,10 @@
             width: 16.8rem;
         }
 
+        .empty {
+            height: 100%;
+        }
+
 
         .cover {
             width: 100%;
@@ -92,86 +96,81 @@
             height: 0.42rem;
             background: rgba(254, 54, 106, 1);
         }
-
-        
     </style>
 </head>
 
 <body>
     <div id="containers" class="flex row">
         <!-- 左侧导航 -->
-        <nav id="navction">
+        <nav id="navction" class="empty">
             <ul>
-                <li>
+                <li data-nid="0">
                     <span class="fz-16 f-fwm c-7b">首页</span>
                 </li>
-                <li>
+                <li data-nid="1">
                     <div class="list-item flex row fl-alig">
                         <span class="fz-16 f-fwm c-7b">APP首页设置</span>
                         <i class="icon m-icon"></i>
                         <i class="icon d-icon hide"></i>
                     </div>
                 </li>
-                <li>
+                <li data-nid="2">
                     <div class="list-item flex row fl-alig">
                         <span class="fz-16 f-fwm c-7b">APP内容管理</span>
                         <i class="icon m-icon"></i>
                         <i class="icon d-icon hide"></i>
                     </div>
                 </li>
-                <li>
+                <li data-nid="3">
                     <div class="list-item flex row fl-alig">
                         <span class="fz-16 f-fwm c-7b">免单商品</span>
                         <i class="icon m-icon"></i>
                         <i class="icon d-icon hide"></i>
                     </div>
                 </li>
-                <li>
+                <li data-nid="4">
                     <div class="list-item flex row fl-alig">
-                        <span class="fz-16 f-fwm c-6a f-wb">0元夺宝</span>
-                        <i class="icon m-icon hide"></i>
-                        <i class="icon d-icon "></i>
+                        <span class="c-7b fz-16 f-fwm">0元夺宝</span>
+                        <i class="icon m-icon "></i>
+                        <i class="icon d-icon hide"></i>
                     </div>
-                    <div class="scend-list">
+                    <div class="scend-list hide">
                         <ul>
                             <li class="b-tor">
-                                <span class="line"></span>
-                                <span class="scend-list-name fz-16 c-6a f-fwm f-wb">发布夺宝</span>
+                                <span class="line v-h"></span>
+                                <span class="scend-list-name fz-16 c-7b f-fwm">发布夺宝</span>
                             </li>
                             <li>
-                                <span class="line v-h"></span>
+                                <span class="line "></span>
                                 <span class="fz-16 f-fwm c-7b">夺宝记录</span>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li data-nid="5">
                     <span class="fz-16 f-fwm c-7b">拉新活动</span>
                 </li>
-                <li>
+                <li data-nid="6">
                     <span class="fz-16 f-fwm c-7b">我的工具</span>
                 </li>
-                <li>
+                <li data-nid="7">
                     <span class="fz-16 f-fwm c-7b">消息推送</span>
                 </li>
-                <li>
+                <li data-nid="8">
                     <span class="fz-16 f-fwm c-7b">免单商品信息</span>
                 </li>
             </ul>
         </nav>
         <!-- 右侧内容 -->
-        <div id="Tab-content"></div>
+        <div id="Tab-content" class="empty"></div>
     </div>
     <!-- 遮罩 -->
     <div class="cover flex row fl-align hides">
-
         <!-- 提示框 -->
         <div class="prompt">
-
             <div class="title fz-18 c-ff f-fwb">
                 确认发布该商品为夺宝商品
             </div>
-
             <div class="prompt-info">
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">商品标题：</span>
@@ -215,17 +214,57 @@
 
     $(function () {
 
+        // 一级导航
+        $('#navction ul').on('click', 'li', function () {
+            let cdom = $(this).children()
+            // 通过判断子节点是否存在list-item样式来判断是否存在二级二级导航
+            if (cdom.hasClass('list-item')) {
+                // 再获取俩个图标的状态
+                let iconone = cdom.find('.m-icon')
+                let icontwo = cdom.find('.d-icon')
+                if (iconone.hasClass('hide')) {
+                    cdom.find('.d-icon').addClass('hide').siblings().removeClass('hide');
+                    // 隐藏二级导航：
+                    $(this).find('.scend-list').addClass('hide')
+                } else if (icontwo.hasClass('hide')) {
+                    cdom.find('.m-icon').addClass('hide').siblings().removeClass('hide');
+                    // 显示二级导航：
+                    $(this).find('.scend-list').removeClass('hide');
+                    // 二级导航
+                    $(".scend-list ul").on('click', 'li', function (e) {
+                        console.log(11111);
+                        e.stopPropagation();
+
+                    })
+                }
+            } else {
+                let nid = $(this).attr("data-nid")
+                console.log('一级的id(无二级导航):', nid);
+                // 用ID来判断，该执行什么操作
+            }
+        })
+
+
+
+
+
+
+
+
         // tab内容有选中的导航的项来决定：
         // 1. 发布
-        // $('#Tab-content').load('release.html');
+        $('#Tab-content').load('release.html');
         // 2. 记录
         // $('#Tab-content').load('record.html')
         // 3. 记录明细
-        $('#Tab-content').load('record-detail.html')
+        // $('#Tab-content').load('record-detail.html')
         // 4. 历史记录
         // $('#Tab-content').load('history.html')
 
-        
+
+
+
+
 
 
     });
