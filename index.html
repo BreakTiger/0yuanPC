@@ -93,9 +93,6 @@
             background: rgba(254, 54, 106, 1);
         }
 
-
-
-
         
     </style>
 </head>
@@ -163,11 +160,7 @@
             </ul>
         </nav>
         <!-- 右侧内容 -->
-        <div id="Tab-content">
-            
-
-
-        </div>
+        <div id="Tab-content"></div>
     </div>
     <!-- 遮罩 -->
     <div class="cover flex row fl-align hides">
@@ -222,12 +215,17 @@
 
     $(function () {
 
-        // tab内容有选中的导航的项来决定
+        // tab内容有选中的导航的项来决定：
+        // 1. 发布
         // $('#Tab-content').load('release.html');
+        // 2. 记录
         // $('#Tab-content').load('record.html')
-
+        // 3. 记录明细
         $('#Tab-content').load('record-detail.html')
+        // 4. 历史记录
+        // $('#Tab-content').load('history.html')
 
+        
 
 
     });

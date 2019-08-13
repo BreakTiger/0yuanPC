@@ -169,40 +169,37 @@
 
     .search-icon {
         margin-right: 0.18rem;
+        cursor: pointer;
     }
 
     .list-header {
         margin-bottom: 0.3rem;
     }
 
+
+
     .list-header ul li:nth-child(1) {
-        margin-left: 0.77rem;
-        margin-right: 2.65rem;
+        margin-left: 0.39rem;
+        margin-right: 2.3rem;
     }
 
     .list-header ul li:nth-child(2) {
-        margin-right: 0.9rem;
+        margin-right: 2.6rem;
     }
 
     .list-header ul li:nth-child(3) {
-        margin-right: 1.2rem;
+        margin-right: 1.62rem;
     }
 
     .list-header ul li:nth-child(4) {
-        margin-right: 1.14rem;
+        margin-right: 1.8rem;
     }
 
     .list-header ul li:nth-child(5) {
-        margin-right: 0.83rem;
+        margin-right: 2.55rem;
     }
 
-    .list-header ul li:nth-child(6) {
-        margin-right: 1.18rem;
-    }
 
-    .list-header ul li:nth-child(7) {
-        margin-right: 1.75rem;
-    }
 
 
     .user-list .list-item {
@@ -213,9 +210,19 @@
         border-radius: 0.1rem;
     }
 
+    .user-list .list-item .list-number {
+        width: 0.32rem;
+        height: 0.32rem;
+        text-align: center;
+        line-height: 0.32rem;
+        background: rgba(255, 210, 222, 1);
+        border-radius: 50%;
+        margin-left: 0.4rem;
+        margin-right: 1.5rem;
+    }
+
     .user-list .list-item .user {
-        margin-left: 0.7rem;
-        margin-right: 0.82rem;
+        margin-right: 1.5rem;
     }
 
     .user-list .list-item .user .user-imgs {
@@ -230,27 +237,15 @@
     }
 
     .Code {
-        margin-right: 0.81rem;
-    }
-
-    .GoodName {
-        margin-right: 0.91rem;
-    }
-
-    .GoodID {
-        margin-right: 0.95rem;
+        margin-right: 1.75rem;
     }
 
     .quan {
-        margin-right: 1.19rem;
-    }
-
-    .count {
-        margin-right: 1.04rem;
+        margin-right: 1.73rem;
     }
 
     .time {
-        margin-right: 0.79rem;
+        margin-right: 1.49rem;
     }
 
     .hisBtn {
@@ -362,100 +357,89 @@
             </div>
         </div>
         <div class="list-header">
-            <ul class="flex fl-align">
-                <li class="fz-16 c-8a f-fmb f-wb">用户信息</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝码</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝商品</li>
-                <li class="fz-16 c-8a f-fmb f-wb">商品ID</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝券</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝次数</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝时间</li>
-                <li class="fz-16 c-8a f-fmb f-wb">操作</li>
+            <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
+                <li>序号</li>
+                <li>用户信息</li>
+                <li>夺宝码</li>
+                <li>总夺宝券</li>
+                <li>夺宝时间</li>
+                <li>操作</li>
             </ul>
         </div>
         <!-- 列表 -->
         <div class="user-list">
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
         </div>
     </div>
 
@@ -513,100 +497,89 @@
             </div>
         </div>
         <div class="list-header">
-            <ul class="flex fl-align">
-                <li class="fz-16 c-8a f-fmb f-wb">用户信息</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝码</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝商品</li>
-                <li class="fz-16 c-8a f-fmb f-wb">商品ID</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝券</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝次数</li>
-                <li class="fz-16 c-8a f-fmb f-wb">夺宝时间</li>
-                <li class="fz-16 c-8a f-fmb f-wb">操作</li>
+            <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
+                <li>序号</li>
+                <li>用户信息</li>
+                <li>夺宝码</li>
+                <li>总夺宝券</li>
+                <li>夺宝时间</li>
+                <li>操作</li>
             </ul>
         </div>
         <!-- 列表 -->
         <div class="user-list">
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
             <div class="list-item flex row fl-align">
+                <span class="list-number c-6a fz-16">1</span>
                 <div class="user flex row fl-align">
                     <img src="resources/head.png" class="user-imgs">
                     <div class="user-infos">
+                        <p class="fz-16 c-66">
+                            <span>昵称：</span>
+                            <span>987456</span>
+                        </p>
                         <p class="fz-16 c-66">
                             <span>账号：</span>
                             <span>15800000000</span>
                         </p>
                         <p class="fz-16 c-66">
-                            <span>微信：</span>
-                            <span>123654</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
+                            <span>备注：</span>
+                            <span>你好</span>
                         </p>
                     </div>
                 </div>
                 <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="GoodName fz-16 c-66 f-fm f-w4">美的空调</span>
-                <span class="GoodID fz-16 c-66 f-fm f-w4">231265884568</span>
                 <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="count fz-16 c-66 f-fm f-w4">36</span>
                 <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
                 <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
-
         </div>
 
     </div>

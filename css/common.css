@@ -83,6 +83,9 @@ h6 {
 }
 
 /*字体大小*/
+.fz-14{
+    font-size: 0.14rem;
+}
 .fz-16 {
     font-size: 0.16rem;
 }
@@ -93,6 +96,10 @@ h6 {
 
 .fz-26{
     font-size: 0.26rem;
+}
+
+.fz-56{
+    font-size: 0.56rem;
 }
 
 
@@ -134,6 +141,10 @@ h6 {
 
 .c-8a{
     color: #8C898A;
+}
+
+.c-74{
+    color: #A8A274;
 }
 
 
@@ -316,7 +327,7 @@ h6 {
 /*容器*/
 #containers {
     width: 100%;
-    height: auto;
+    /* height: 100vh; */
     background: #F2F2F2;
     position: relative;
 }

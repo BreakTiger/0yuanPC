@@ -1,0 +1,308 @@
+<!-- 夺宝历史记录 -->
+<style>
+    .user-base {
+        width: 16.20rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.19rem;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 0.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .title-line {
+        width: 100%;
+        background: #ffffff;
+        padding-top: 0.15rem;
+        padding-bottom: 0.17rem;
+        margin-bottom: 0.2rem;
+        border: 0.01rem solid #F2F2F2;
+    }
+
+    .title-line>span {
+        cursor: pointer;
+    }
+
+    .title-line>span:first-child {
+        margin-left: 0.3rem;
+    }
+
+    .users-imgs {
+        margin-left: 0.21rem;
+        margin-right: 0.1rem;
+    }
+
+    .users-imgs>img {
+        width: 0.98rem;
+        height: 0.98rem;
+        border-radius: 50%;
+        margin-bottom: 0.19rem;
+    }
+
+    .users-imgs>span {
+        display: block;
+        width: 0.6rem;
+        text-align: center;
+        padding-top: 0.08rem;
+        padding-bottom: 0.06rem;
+        background: rgba(232, 227, 189, 1);
+        border-radius: 0.12rem;
+    }
+
+    .users-base-infos {
+        margin-right: 1.2rem;
+    }
+
+    .users-base-infos>p {
+        margin-bottom: 0.2rem;
+    }
+
+    .users-base-infos>p:last-child {
+        margin-bottom: 0;
+    }
+
+    .have-quan,
+    .join-times,
+    .winning {
+        padding-right: 1.15rem;
+        margin-right: 1.15rem;
+    }
+
+    .have-quan>span:first-child,
+    .join-times>span:first-child,
+    .winning>span:first-child,
+    .Belong>span:first-child {
+        margin-bottom: 0.35rem;
+    }
+
+    .lists-heads {
+        width: 16.20rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .lists-heads ul li:nth-child(1) {
+        margin-left: 0.45rem;
+        margin-right: 1.17rem;
+    }
+
+    .lists-heads ul li:nth-child(2) {
+        margin-right: 1.26rem;
+    }
+
+    .lists-heads ul li:nth-child(3) {
+        margin-right: 0.97rem;
+    }
+    .lists-heads ul li:nth-child(4) {
+        margin-right: 0.8rem;
+    }
+    .lists-heads ul li:nth-child(5) {
+        margin-right: 1.27rem;
+    }
+    .lists-heads ul li:nth-child(6) {
+        margin-right: 1.7rem;
+    }
+    .lists-heads ul li:nth-child(7) {
+        margin-right: 1.09rem;
+    }
+    .lists-heads ul li:nth-child(8) {
+        margin-right: 0.8rem;
+    }
+
+    .good-list .list-contents {
+        margin-bottom: 0.8rem;
+    } 
+
+    .good-list .list-contents .list-item {
+        width: 16.2rem;
+        padding: 0.2rem 0;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 0.1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .good-list .list-contents .list-item>img {
+        width: 0.74rem;
+        height: 0.74rem;
+        margin-right: 0.8rem;
+        margin-left: 0.4rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(2) {
+        margin-right: 0.8rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(3) {
+        margin-right: 0.93rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(4) {
+        margin-right: 1.18rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(5) {
+        margin-right: 1.05rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(6) {
+        margin-right: 0.81rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(7) {
+        margin-right: 0.8rem;
+    }
+
+    .good-list .list-contents .list-item>span:nth-child(8) {
+        margin-right: 1.05rem;
+    }
+</style>
+
+<div class="Tab-four flex col fl-align">
+
+    <div class="title-line">
+        <span class="fz-18 f-fwb f-wb c-6a">夺宝历史记录</span>
+        <span class="fz-16 c-4f f-fm f-wb">>夺宝明细</span>
+        <span class="fz-16 c-4f f-fm f-wb">>夺宝记录</span>
+    </div>
+
+    <div class="user-base flex row fl-align">
+        <div class="users-infos flex row fl-align">
+            <div class="users-imgs flex col fl-align">
+                <img src="resources/head.png" alt="">
+                <span class="fz-14 c-74">合伙人</span>
+            </div>
+            <div class="users-base-infos">
+                <p class="fz-16 c-66 f-fm f-w4">
+                    <span>账号：</span>
+                    <span>15800000000</span>
+                </p>
+                <p class="fz-16 c-66 f-fm f-w4">
+                    <span>微信：</span>
+                    <span>123654</span>
+                </p>
+                <p class="fz-16 c-66 f-fm f-w4">
+                    <span>昵称：</span>
+                    <span>987456</span>
+                </p>
+                <p class="fz-16 c-99 f-fm f-w4">
+                    <span>注册时间：</span>
+                    <span>2019-01-01 15:00:00</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="have-quan lineRight flex col fl-align">
+            <span class="fz-16 c-66">所持夺宝券</span>
+            <span class="fz-56 c-6a f-fb f-wb">56</span>
+        </div>
+
+        <div class="join-times lineRight flex col fl-align">
+            <span class="fz-16 c-66">参与夺宝次数</span>
+            <span class="fz-56 c-6a f-fb f-wb">56</span>
+        </div>
+
+        <div class="winning lineRight flex col fl-align">
+            <span class="fz-16 c-66">中奖次数</span>
+            <span class="fz-56 c-6a f-fb f-wb">6</span>
+        </div>
+
+        <div class="Belong flex col fl-align">
+            <span class="fz-16 c-66">所属总代</span>
+            <span class="fz-56 c-6a f-fb f-wb">12138</span>
+        </div>
+
+    </div>
+
+    <div class="lists-heads">
+        <ul class="flex fz-16 c-8a">
+            <li>商品图片</li>
+            <li>短标题</li>
+            <li>商品ID</li>
+            <li>原价/到手价</li>
+            <li>夺宝次数</li>
+            <li>开始时间</li>
+            <li>结束时间</li>
+            <li>是否中奖</li>
+            <li>中奖夺宝码</li>
+        </ul>
+    </div>
+
+    <div class="good-list">
+
+        <div class="list-contents">
+            <div class="list-item flex row fl-align">
+                <img src="resources/yue.jpg">
+                <span class="fz-16 c-66">耐克官方旗舰店</span>
+                <span class="fz-16 c-66">21568454</span>
+                <span class="fz-16 c-66">599/399</span>
+                <span class="fz-16 c-66">66</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">是</span>
+                <span class="fz-16 c-66">12355556</span>
+            </div>
+            <div class="list-item flex row fl-align">
+                <img src="resources/yue.jpg">
+                <span class="fz-16 c-66">耐克官方旗舰店</span>
+                <span class="fz-16 c-66">21568454</span>
+                <span class="fz-16 c-66">599/399</span>
+                <span class="fz-16 c-66">66</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">是</span>
+                <span class="fz-16 c-66">12355556</span>
+            </div>
+            <div class="list-item flex row fl-align">
+                <img src="resources/yue.jpg">
+                <span class="fz-16 c-66">耐克官方旗舰店</span>
+                <span class="fz-16 c-66">21568454</span>
+                <span class="fz-16 c-66">599/399</span>
+                <span class="fz-16 c-66">66</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">是</span>
+                <span class="fz-16 c-66">12355556</span>
+            </div>
+            <div class="list-item flex row fl-align">
+                <img src="resources/yue.jpg">
+                <span class="fz-16 c-66">耐克官方旗舰店</span>
+                <span class="fz-16 c-66">21568454</span>
+                <span class="fz-16 c-66">599/399</span>
+                <span class="fz-16 c-66">66</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">是</span>
+                <span class="fz-16 c-66">12355556</span>
+            </div>
+            <div class="list-item flex row fl-align">
+                <img src="resources/yue.jpg">
+                <span class="fz-16 c-66">耐克官方旗舰店</span>
+                <span class="fz-16 c-66">21568454</span>
+                <span class="fz-16 c-66">599/399</span>
+                <span class="fz-16 c-66">66</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">2019-01-06 12:12:12</span>
+                <span class="fz-16 c-66">是</span>
+                <span class="fz-16 c-66">12355556</span>
+            </div>
+
+        </div>
+
+        <!-- 分页器 -->
+        <div class="pagger-box pagger flex row fl-align" id="box"></div>
+    </div>
+
+</div>
+
+<script>
+    // 分页器
+    var setTotalCount = 15;
+    $('#box').paging({
+        initPageNo: 1, // 初始页码
+        totalPages: 750, //总页数
+        totalCount: '合计' + setTotalCount + '条数据', // 条目总数
+        slideSpeed: 600, // 缓动速度。单位毫秒
+        jump: true, //是否支持跳转
+        callback: function (page) { // 回调函数
+            console.log(page);
+        }
+    })
+</script>
