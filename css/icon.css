@@ -3,15 +3,15 @@
 }
 
 .m-icon {
-    width: 0.06rem;
+    width: 0.14rem;
     height: 0.12rem;
-    background: url(../images/more.png) no-repeat center/0.06rem;
+    background: url(../images/more.png) no-repeat center/0.14rem;
 }
 
 .d-icon {
-    width: 0.12rem;
-    height: 0.05rem;
-    background: url(../images/down.png) no-repeat center/0.12rem;
+    width: 0.15rem;
+    height: 0.08rem;
+    background: url(../images/down.png) no-repeat center/0.15rem;
 }
 
 
@@ -43,4 +43,17 @@
     width: 0.16rem;
     height: 0.16rem;
     background: url(../images/ed.png) no-repeat center/0.16rem;
+}
+
+.j-icon{
+    width: 0.58rem;
+    height: 0.58rem;
+    background: url(../images/join.png) no-repeat center/0.58rem;
+}
+
+
+.search-icon{
+    width: 0.18rem;
+    height: 0.16rem;
+    background: url(../images/sreach.png) no-repeat center/0.18rem;
 }
