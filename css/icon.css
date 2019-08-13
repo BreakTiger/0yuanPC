@@ -57,3 +57,9 @@
     height: 0.16rem;
     background: url(../images/sreach.png) no-repeat center/0.18rem;
 }
+
+.t-icon{
+    width: 1.19rem;
+    height: 1.19rem;
+    background: url(../images/t-icon.png) no-repeat center/1.19rem;
+}
