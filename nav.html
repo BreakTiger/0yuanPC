@@ -1,0 +1,122 @@
+<ul class="nav-one fz-16 f-fwm c-7b">
+    <li data-oid="0">
+        <span>首页</span>
+    </li>
+    <li>
+        <span>APP首页设置</span>
+        <i class="icon m-icon"></i>
+        <i class="icon d-icon hide"></i>
+        <ul class="nav-two hides">
+            <li class="flex row fl-align" data-sid="0">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+            <li class="flex row fl-align" data-sid="1">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>APP内容管理</span>
+        <i class="icon m-icon"></i>
+        <!-- <i class="icon d-icon hide"></i> -->
+        <ul class="nav-two hides">
+            <li class="flex row fl-align" data-sid="2">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+            <li class="flex row fl-align" data-sid="3">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>免单商品</span>
+        <i class="icon m-icon"></i>
+        <!-- <i class="icon d-icon hide"></i> -->
+        <ul class="nav-two hides">
+            <li class="flex row fl-align" data-sid="4">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+            <li class="flex row fl-align" data-sid="5">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>0元夺宝</span>
+        <i class="icon m-icon"></i>
+        <!-- <i class="icon d-icon hide"></i> -->
+        <ul class="nav-two hides">
+            <li class="flex row fl-align" data-sid="6">
+                <span></span>
+                <span>发布夺宝</span>
+            </li>
+            <li class="flex row fl-align" data-sid="7">
+                <span></span>
+                <span>夺宝记录</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>APP内容管理</span>
+        <i class="icon m-icon"></i>
+        <!-- <i class="icon d-icon hide"></i> -->
+        <ul class="nav-two hides">
+            <li class="flex row fl-align" data-sid="8">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+            <li class="flex row fl-align" data-sid="9">
+                <span></span>
+                <span>二级菜单</span>
+            </li>
+        </ul>
+    </li>
+    <li data-oid="1">
+        <span>拉新活动</span>
+    </li>
+    <li data-oid="2">
+        <span>我的工具</span>
+    </li>
+    <li data-oid="3">
+        <span>消息推送</span>
+    </li>
+    <li data-oid="4">
+        <span>免单商品信息</span>
+    </li>
+</ul>
+
+<script>
+    $(function () {
+        // 一级导航
+        $('.nav-one').on('click', 'li', function () {
+            lnav(); //循环
+            $(this).children().eq(0).addClass('choose-nav-one-span');
+            //显示隐藏二级菜单
+            $(this).find('ul').slideToggle();
+            $(this).siblings().children('ul').slideUp();
+        })
+
+        // 循环
+        function lnav() {
+            $('#navction ul').find('li').each(function (index, e) {
+                $(this).children().eq(0).removeClass('choose-nav-one-span')
+            })
+        }
+
+        // 二级导航
+        $('.nav-two').on('click', 'li', function (e) {
+            e.stopPropagation(); //阻止父级冒泡
+            $(this).addClass('choose-nav-two').siblings().removeClass('choose-nav-two');
+            $(this).children().eq(0).addClass('nline')
+            $(this).siblings().children().eq(0).removeClass('nline');
+        })
+
+        
+    })
+</script>

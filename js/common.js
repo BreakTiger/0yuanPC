@@ -1,11 +1,14 @@
 /* common.js文件，创建于2019/04/28 author:wen*/
-var ajaxUrl = 'http://fdadmin.efengqing.com';//请求域名
-var imgUrl = '';//图片链接
+var ajaxUrl = 'http://fdadmin.efengqing.com/'; //请求域名
+var imgUrl = ''; //图片链接
 /*封装通用ajax请求*/
 var userToken = localData('get', 'userLoginInfo').token || '';
+
 function ajax_get(surl, param, call) {
     $.ajax({
-        headers: { 'token': userToken },
+        headers: {
+            'token': userToken
+        },
         url: ajaxUrl + (surl.substring(0, 1) == '/' ? surl.substring(1) : surl),
         data: param || {},
         type: 'get',
@@ -14,9 +17,12 @@ function ajax_get(surl, param, call) {
         success: call,
     })
 }
+
 function ajax_post(surl, param, call) {
     $.ajax({
-        headers: { 'token': userToken },
+        headers: {
+            'token': userToken
+        },
         url: ajaxUrl + (surl.substring(0, 1) == '/' ? surl.substring(1) : surl),
         data: param || {},
         type: 'post',
@@ -25,6 +31,7 @@ function ajax_post(surl, param, call) {
         success: call,
     })
 }
+
 function callBack(r, j) {
     j = j || {};
     if (r.status == 100) { //重新登录
@@ -39,12 +46,12 @@ function callBack(r, j) {
     } else if (r.status == 201) { // 操作失败
         if (j.fail) {
             j.fail(r.msg);
-        }else {
+        } else {
             return;
         }
     } else if (r.status == 202) { // 操作成功，需要跳转页面
     } else if (r.status == 203) { // 操作失败，需要跳转页面
-    } else { }
+    } else {}
 }
 
 //本地数据操作,(存于localStorge中)
@@ -68,10 +75,21 @@ function setCookie(name, value) { //设置cookie
     document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
 }
 //获取cookies
-function getCookie(name) {  //获取Cookie
+function getCookie(name) { //获取Cookie
     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
     if (arr = document.cookie.match(reg))
         return unescape(arr[2]);
     else
         return null;
 }
+
+
+// 清空Tab-content下的所有内容跟节点
+function emptys() {
+    $('#Tab-content').empty();
+}
+
+// 窗口大小发生变化刷新
+$(window).resize(function () {
+    location.reload()
+});

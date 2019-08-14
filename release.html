@@ -1,179 +1,322 @@
-<!-- 发布 -->
-<style>
-    .Tab-one .title-line {
-        width: 100%;
-        background: #ffffff;
-        padding-top: 0.15rem;
-        padding-bottom: 0.17rem;
-        border: 0.01rem solid #F2F2F2;
-        margin-bottom: 0.3rem;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .Tab-one .title-line>span {
-        margin-left: 0.3rem;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>0元夺宝 - 发布</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/paging.css">
+    <style>
+        /* 发布 */
+        .Tab-one .title-line {
+            width: 100%;
+            background: #ffffff;
+            padding-top: 0.15rem;
+            padding-bottom: 0.17rem;
+            border: 0.01rem solid #F2F2F2;
+            margin-bottom: 0.3rem;
+        }
 
-    .input-content {
-        width: 16.2rem;
-        height: 9.1rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.1rem;
-    }
+        .Tab-one .title-line>span {
+            margin-left: 0.3rem;
+        }
 
-    .input-content .line {
-        margin-top: 0.2rem;
-    }
+        .input-content {
+            width: 16.2rem;
+            height: 9.1rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+        }
 
-    .input-content .line>span {
-        display: block;
-        width: 1.6rem;
-        text-align: right;
-        margin-left: 0.17rem;
-        margin-right: 0.04rem;
-    }
+        .input-content .line {
+            margin-top: 0.2rem;
+        }
 
-    .input-content .line .put-box {
-        width: 8rem;
-        height: 0.5rem;
-        background: rgba(255, 255, 255, 1);
-        border: 0.01rem solid rgba(226, 226, 226, 1);
-    }
+        .input-content .line>span {
+            display: block;
+            width: 1.6rem;
+            text-align: right;
+            margin-left: 0.17rem;
+            margin-right: 0.04rem;
+        }
 
-    .input-content .line .put-box>i {
-        margin-left: 0.2rem;
-        margin-right: 0.04rem;
-    }
+        .input-content .line .put-box {
+            width: 8rem;
+            height: 0.5rem;
+            background: rgba(255, 255, 255, 1);
+            border: 0.01rem solid rgba(226, 226, 226, 1);
+        }
 
-    .input-content .line .put-box>input {
-        width: 90%;
-        height: 100%;
-    }
+        .input-content .line .put-box>i {
+            margin-left: 0.2rem;
+            margin-right: 0.04rem;
+        }
 
-    .input-content .line>input {
-        width: 8rem;
-        height: 0.5rem;
-        background: rgba(255, 255, 255, 1);
-        border: 0.01rem solid rgba(226, 226, 226, 1);
-        text-indent: 0.2rem;
-    }
+        .input-content .line .put-box>input {
+            width: 90%;
+            height: 100%;
+        }
 
-    .snedBtn {
-        width: 1.06rem;
-        text-align: center;
-        padding: 0.1rem 0;
-        background: rgba(254, 54, 106, 1);
-        border-radius: 0.21rem;
-        margin-left: 1.8rem;
-        margin-top: 0.4rem;
-        cursor: pointer;
-    }
+        .input-content .line>input {
+            width: 8rem;
+            height: 0.5rem;
+            background: rgba(255, 255, 255, 1);
+            border: 0.01rem solid rgba(226, 226, 226, 1);
+            text-indent: 0.2rem;
+        }
 
-    .Up-box .s-img {
-        width: 1rem;
-        height: 1rem;
-        position: relative;
-        margin-right: 0.1rem;
-        margin-left: 0.09rem;
-    }
+        .snedBtn {
+            width: 1.06rem;
+            text-align: center;
+            padding: 0.1rem 0;
+            background: rgba(254, 54, 106, 1);
+            border-radius: 0.21rem;
+            margin-left: 1.8rem;
+            margin-top: 0.4rem;
+            cursor: pointer;
+        }
 
-    .Up-box .s-img>img {
-        width: 100%;
-        height: 100%;
-    }
+        .Up-box .s-img {
+            width: 1rem;
+            height: 1rem;
+            position: relative;
+            margin-right: 0.1rem;
+            margin-left: 0.09rem;
+        }
 
-    .Up-box .add-box {
-        width: 1rem;
-        height: 1rem;
-        border: 0.01rem solid rgba(226, 226, 226, 1);
-    }
+        .Up-box .s-img>img {
+            width: 100%;
+            height: 100%;
+        }
 
-    .Up-box .add-box .add-icon-one,
-    .Up-box .add-box .add-icon-two {
-        margin: auto;
-        cursor: pointer;
-    }
+        .Up-box .add-box {
+            width: 1rem;
+            height: 1rem;
+            border: 0.01rem solid rgba(226, 226, 226, 1);
+            position: relative;
+        }
 
-    .close-icon {
-        position: absolute;
-        top: 0rem;
-        right: 0rem;
-        z-index: 100;
-        cursor: pointer;
-    }
-</style>
+        .add-box-hover {
+            background: #E2E2E2;
+        }
 
-<div class="Tab-one flex col fl-align">
-    <!-- 标题 -->
-    <div class="title-line">
-        <span class="fz-18 f-fwb f-wb c-6a">新增夺宝商品</span>
-    </div>
-    <!-- 输入内容 -->
-    <div class="input-content">
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">宝贝链接：</span>
-            <div class="put-box flex row fl-align">
-                <i class="icon link-icon"></i>
-                <input type="text" placeholder="请粘贴或输入宝贝链接" class="link">
-            </div>
-        </div>
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">优惠券链接：</span>
-            <div class="put-box flex row fl-align">
-                <i class="icon link-icon"></i>
-                <input type="text"
-                    placeholder="示例：https://uland.taobao.com/quan/detail?sellerId=xxxxx&activityId=xxxxx" class="c-link">
-            </div>
-        </div>
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">宝贝短标题：</span>
-            <input type="text" placeholder="请输入宝贝标题" class="gname">
-        </div>
 
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">商品主图：</span>
-            <div class="Up-box flex row fl-align">
-                <!-- 预览图 -->
-                <div class="s-img">
-                    <img src="resources/yue.jpg">
-                    <i class="icon close-icon"></i>
+        .Up-box .add-box .add-icon-one,
+        .Up-box .add-box .add-icon-two {
+            margin: auto;
+
+        }
+
+        .Up-box .add-box .upfiles {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 0rem;
+            right: 0rem;
+            z-index: 100;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containers" class="flex row">
+        <!-- 左侧导航 -->
+        <nav id="navction"></nav>
+        <!-- 右侧内容 -->
+        <div id="Tab-content">
+            <div class="Tab-one flex col fl-align">
+                <!-- 标题 -->
+                <div class="title-line">
+                    <span class="fz-18 f-fwb f-wb c-6a">新增夺宝商品</span>
                 </div>
-                <!-- 添加框 -->
-                <div class="add-box flex row fl-align">
-                    <i class="icon add-icon-one hide"></i>
-                    <span class="icon add-icon-two "></span>
+                <!-- 输入内容 -->
+                <div class="input-content">
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">宝贝链接：</span>
+                        <div class="put-box flex row fl-align">
+                            <i class="icon link-icon"></i>
+                            <input type="text" placeholder="请粘贴或输入宝贝链接" class="link">
+                        </div>
+                    </div>
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">优惠券链接：</span>
+                        <div class="put-box flex row fl-align">
+                            <i class="icon link-icon"></i>
+                            <input type="text"
+                                placeholder="示例：https://uland.taobao.com/quan/detail?sellerId=xxxxx&activityId=xxxxx"
+                                class="c-link">
+                        </div>
+                    </div>
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">宝贝短标题：</span>
+                        <input type="text" placeholder="请输入宝贝标题" class="gname">
+                    </div>
+
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">商品主图：</span>
+                        <div class="Up-box flex row fl-align">
+                            <input type="hidden" value="" id="upimg">
+                            <!-- 预览图 -->
+                            <!-- <div class="s-img">
+                                        <img src="resources/yue.jpg">
+                                        <i class="icon close-icon"></i>
+                                    </div> -->
+                            <!-- <div class="s-img">
+                                        <img src="resources/yue.jpg">
+                                        <i class="icon close-icon"></i>
+                                    </div> -->
+                            <!-- 添加框 -->
+                            <div class="add-box flex row fl-align">
+                                <i class="icon add-icon-one hide"></i>
+                                <i class="icon add-icon-two "></i>
+                                <input type="file" class="upfiles">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">原价(元)：</span>
+                        <input type="text" placeholder="请输入原价" class="oprice">
+                    </div>
+
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">到手价(元)：</span>
+                        <input type="text" placeholder="请输入到手价" class="price">
+                    </div>
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">佣金比例(元)：</span>
+                        <input type="text" placeholder="请输入佣金比例" class="proportion">
+                    </div>
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">该活动所需人数(人)：</span>
+                        <input type="text" placeholder="请输入人数" class="numbers">
+                    </div>
+
+                    <div class="snedBtn c-ff fz-16">立即发布</div>
                 </div>
             </div>
         </div>
-
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">原价(元)：</span>
-            <input type="text" placeholder="请输入原价">
-        </div>
-
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">到手价(元)：</span>
-            <input type="text" placeholder="请输入到手价">
-        </div>
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">佣金比例(元)：</span>
-            <input type="text" placeholder="请输入佣金比例">
-        </div>
-        <div class="line flex row fl-align">
-            <span class="fz-16 c-60 f-fm">该活动所需人数(人)：</span>
-            <input type="text" placeholder="请输入人数">
-        </div>
-
-        <div class="snedBtn c-ff fz-16">
-            立即发布
-        </div>
     </div>
-</div>
+    <!-- 遮罩 -->
+    <div class="cover flex row fl-align hides">
+        <!-- 提示框 -->
+        <div class="prompt">
+            <div class="title fz-18 c-ff f-fwb">
+                确认发布该商品为夺宝商品
+            </div>
+            <div class="prompt-info">
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品标题：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">驼背矫正器韩国背背佳隐形矫正带抖音放驼背神器</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品链接：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">https://uland.taobao.com/item.htm?id=54864814835</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">商品价格：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">250元</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">到 手 价：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">200元</span>
+                </p>
+                <p>
+                    <span class="fz-16 c-60 f-fwb f-wb">所需人数：</span>
+                    <span class="fz-16 c-60 f-fm fw4 clamp1">6000人</span>
+                </p>
+                <p>
+                    <button class="canel fz-16 c-6a">取消</button>
+                    <button class="sure fz-16 c-ff">确认发布</button>
+                </p>
 
+            </div>
 
+        </div>
+
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/paging.js"></script>
+<script src="js/common.js"></script>
 <script>
     $(function () {
 
+        // 加载导航部分
+        $('#navction').load('nav.html');
+
+        // window.location.href=""
+
+
+        // 上传图片按钮样式动效
+        $('.upfiles').mouseover(function () {
+            $('.Up-box .add-box').addClass('add-box-hover');
+            $('.Up-box .add-box .add-icon-one').removeClass('hide');
+            $('.Up-box .add-box .add-icon-two').addClass('hide');
+        }).mouseout(function () {
+            $('.Up-box .add-box').removeClass('add-box-hover');
+            $('.Up-box .add-box .add-icon-two').removeClass('hide');
+            $('.Up-box .add-box .add-icon-one').addClass('hide');
+        });
+
+
+
+
+        // 上传图片需要token
+        // ajax_get('/Treasure/getToken', {}, function (r) {
+        //     console.log(r)
+        //     callBack(r, {
+        //         success: function (data) {
+        //             console.log(data);
+        //         }
+        //     })
+        // })
+
+
         // 上传图片
+        $('.upfiles').change(function (e) {
+            // 文件信息
+            let file = e.currentTarget.files[0]
+            // 文件大小
+            let filesize = file.size / 1024
+            // 文件类型
+            let filetype = file.type
+            //后缀名
+            let type = (filetype.substr(filetype.lastIndexOf("/") + 1)).toLowerCase();
+            // 判断
+            if (type != "jpg" && type != "gif" && type != "jpeg" && type != "png") {
+                alert("您上传图片的类型不符合(.jpg|.jpeg|.gif|.png)！");
+                return false;
+            } else if (filesize > 500) {
+                alert("上传大小不能超过500K.");
+                return false;
+            } else {
+                // 上传方法
+                // upload(file);
+                upLoading(file)
+
+            }
+        })
+
+        function upLoading(e) {
+            console.log(e);
+            console.log(11111);
+        }
 
 
         // 立即发布
@@ -181,25 +324,32 @@
             // 获取数据
             // 1.宝贝链接
             let links = $('.link').val();
-            console.log('宝贝链接:',links);
-
+            console.log('宝贝链接:', links);
             // 2.优惠券链接
             let clink = $('.c-link').val()
-            console.log('优惠券链接:',clink)
-
+            console.log('优惠券链接:', clink)
             // 3.短标题
             let gname = $('.gname').val();
-            console.log('短标题:',gname);
-
-            // 4.商品主图数据[数组类型或者拼接]
-
+            console.log('短标题:', gname);
+            // 4.商品主图数据[数组类型或者拼接]，从隐藏域中获取
+            let himg = $('#upimg').val()
+            console.log('商品主图:', himg);
             // 5.原价
-
+            let oprice = $('.oprice').val()
+            console.log('原价：', oprice)
             // 6.到手价
-
+            let price = $('.price').val()
+            console.log('到手价：', price)
             // 7.佣金比例
-
+            let proportion = $('.proportion').val()
+            console.log('佣金比例：', proportion)
             // 8.所需人数
+            let numbers = $('.numbers').val()
+            console.log('所需人数：', numbers)
+
         })
-    })
+
+    });
 </script>
+
+</html>
