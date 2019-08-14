@@ -1,592 +1,618 @@
-<!-- 夺宝记录明细 -->
-<style>
-    .title-line {
-        width: 100%;
-        background: #ffffff;
-        padding-top: 0.15rem;
-        padding-bottom: 0.17rem;
-        margin-bottom: 0.2rem;
-        border: 0.01rem solid #F2F2F2;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .title-line>span:first-child {
-        margin-left: 0.3rem;
-        cursor: pointer;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>0元夺宝 - 夺宝明细</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <style>
+        .title-line {
+            width: 100%;
+            background: #ffffff;
+            padding-top: 0.15rem;
+            padding-bottom: 0.17rem;
+            margin-bottom: 0.2rem;
+            border: 0.01rem solid #F2F2F2;
+        }
 
-    .title-line>span:last-child {
-        cursor: pointer;
-    }
+        .title-line>span:first-child {
+            margin-left: 0.3rem;
+            cursor: pointer;
+        }
 
-    .sign {
-        width: 16.20rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.1rem;
-        margin-bottom: 0.14rem;
-    }
+        .title-line>span:last-child {
+            cursor: pointer;
+        }
 
-    .title-box {
-        width: 4.5rem;
-        height: 1.27rem;
-        background: url(http://img.fqapps.com/85823b1a4980312c3b1822609ee38439) no-repeat center/4.5rem;
-        margin-top: 0.25rem;
-    }
+        .sign {
+            width: 16.20rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+            margin-bottom: 0.14rem;
+        }
 
-    .title-box>p {
-        text-align: center;
-    }
+        .title-box {
+            width: 4.5rem;
+            height: 1.27rem;
+            background: url(http://img.fqapps.com/85823b1a4980312c3b1822609ee38439) no-repeat center/4.5rem;
+            margin-top: 0.25rem;
+        }
 
-    .title-box>p:first-child {
-        margin-top: 0.17rem;
-        margin-bottom: 0.15rem;
-    }
+        .title-box>p {
+            text-align: center;
+        }
 
-    .left-box,
-    .right-box {
-        width: 4.7rem;
-        height: 2.3rem;
-        background: url(http://img.fqapps.com/62854addfde5c4bf61f0055c5308c68e) no-repeat center/4.7rem;
-        position: relative;
-    }
+        .title-box>p:first-child {
+            margin-top: 0.17rem;
+            margin-bottom: 0.15rem;
+        }
 
-    .mid-box {
-        width: 4.7rem;
-        height: 2.5rem;
-        background: url(http://img.fqapps.com/27d8b2f525a319ded84193f42e08573d) no-repeat center/4.7rem;
-        position: relative;
-    }
+        .left-box,
+        .right-box {
+            width: 4.7rem;
+            height: 2.3rem;
+            background: url(http://img.fqapps.com/62854addfde5c4bf61f0055c5308c68e) no-repeat center/4.7rem;
+            position: relative;
+        }
 
-    .left-box .title,
-    .right-box .title,
-    .mid-box .title {
-        width: 2.64rem;
-        height: 0.94rem;
-        background: url(http://img.fqapps.com/2dd77bdd89775439645d63488ef73779) no-repeat center/2.64rem;
-        position: absolute;
-        top: -0.08rem;
-        z-index: 100;
-    }
+        .mid-box {
+            width: 4.7rem;
+            height: 2.5rem;
+            background: url(http://img.fqapps.com/27d8b2f525a319ded84193f42e08573d) no-repeat center/4.7rem;
+            position: relative;
+        }
 
-    .left-box .title,
-    .right-box .title {
-        left: 1.1rem;
-    }
+        .left-box .title,
+        .right-box .title,
+        .mid-box .title {
+            width: 2.64rem;
+            height: 0.94rem;
+            background: url(http://img.fqapps.com/2dd77bdd89775439645d63488ef73779) no-repeat center/2.64rem;
+            position: absolute;
+            top: -0.08rem;
+            z-index: 100;
+        }
 
-    .mid-box .title {
-        left: 1.08rem;
-    }
+        .left-box .title,
+        .right-box .title {
+            left: 1.1rem;
+        }
 
-    .left-box .title>p,
-    .right-box .title>p,
-    .mid-box .title>p {
-        text-align: center;
-        margin-top: 0.30rem;
-    }
+        .mid-box .title {
+            left: 1.08rem;
+        }
 
-    .user-header {
-        width: 0.76rem;
-        height: 0.76rem;
-        border-radius: 50%;
-        margin-right: 0.1rem;
-        margin-left: 1.17rem;
-    }
+        .left-box .title>p,
+        .right-box .title>p,
+        .mid-box .title>p {
+            text-align: center;
+            margin-top: 0.30rem;
+        }
 
-    .left-box .info {
-        margin-top: 0.6rem;
-    }
+        .user-header {
+            width: 0.76rem;
+            height: 0.76rem;
+            border-radius: 50%;
+            margin-right: 0.1rem;
+            margin-left: 1.17rem;
+        }
 
-    .right-box .add-info {
-        margin-top: 0.75rem;
-    }
+        .left-box .info {
+            margin-top: 0.6rem;
+        }
 
-    .right-box .add-info>p>span:first-child {
-        margin-left: 0.62rem;
-    }
+        .right-box .add-info {
+            margin-top: 0.75rem;
+        }
 
-    .user-info>p {
-        margin-bottom: 0.12rem;
-    }
+        .right-box .add-info>p>span:first-child {
+            margin-left: 0.62rem;
+        }
 
-    .user-info>p:first-child {
-        margin-top: 0.12rem;
-    }
+        .user-info>p {
+            margin-bottom: 0.12rem;
+        }
 
-    .add-info>P {
-        margin-bottom: 0.12rem;
-    }
+        .user-info>p:first-child {
+            margin-top: 0.12rem;
+        }
 
-    .add-info>P:first-child {
-        margin-top: 0px;
-    }
+        .add-info>P {
+            margin-bottom: 0.12rem;
+        }
 
-    .prize-img {
-        width: 0.86rem;
-        height: 0.98rem;
-        margin-bottom: 0.1rem;
-        margin-top: 0.66rem;
-    }
+        .add-info>P:first-child {
+            margin-top: 0px;
+        }
 
-    .search-line {
-        width: 16.20rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.1rem;
-        padding: 0.14rem 0;
-        margin-bottom: 0.59rem;
-    }
+        .prize-img {
+            width: 0.86rem;
+            height: 0.98rem;
+            margin-bottom: 0.1rem;
+            margin-top: 0.66rem;
+        }
 
-    .search-line .j-icon {
-        margin-right: 0.1rem;
-        margin-left: 0.2rem;
-    }
+        .search-line {
+            width: 16.20rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+            padding: 0.14rem 0;
+            margin-bottom: 0.59rem;
+        }
 
-    .search-line .j-number {
-        padding-right: 0.28rem;
-        margin-right: 0.29rem;
-    }
+        .search-line .j-icon {
+            margin-right: 0.1rem;
+            margin-left: 0.2rem;
+        }
 
-    .search-line .j-number>span:first-child {
-        margin-bottom: 0.12rem;
-    }
+        .search-line .j-number {
+            padding-right: 0.28rem;
+            margin-right: 0.29rem;
+        }
 
-    .d-icon {
-        margin-left: 0.03rem;
-        margin-right: 0.09rem;
-    }
+        .search-line .j-number>span:first-child {
+            margin-bottom: 0.12rem;
+        }
 
-    .search {
-        width: 3.68rem;
-        height: 0.46rem;
-        background: rgba(254, 54, 106, 0.08);
-        border-radius: 0.23rem;
-    }
+        .d-icon {
+            margin-left: 0.03rem;
+            margin-right: 0.09rem;
+        }
 
-
-    .search>input {
-        width: 100%;
-        height: 100%;
-        text-indent: 0.21rem;
-    }
-
-    .search-icon {
-        margin-right: 0.18rem;
-        cursor: pointer;
-    }
-
-    .list-header {
-        margin-bottom: 0.3rem;
-    }
+        .search {
+            width: 3.68rem;
+            height: 0.46rem;
+            background: rgba(254, 54, 106, 0.08);
+            border-radius: 0.23rem;
+        }
 
 
+        .search>input {
+            width: 100%;
+            height: 100%;
+            text-indent: 0.21rem;
+        }
 
-    .list-header ul li:nth-child(1) {
-        margin-left: 0.39rem;
-        margin-right: 2.3rem;
-    }
+        .search-icon {
+            margin-right: 0.18rem;
+            cursor: pointer;
+        }
 
-    .list-header ul li:nth-child(2) {
-        margin-right: 2.6rem;
-    }
-
-    .list-header ul li:nth-child(3) {
-        margin-right: 1.62rem;
-    }
-
-    .list-header ul li:nth-child(4) {
-        margin-right: 1.8rem;
-    }
-
-    .list-header ul li:nth-child(5) {
-        margin-right: 2.55rem;
-    }
+        .list-header {
+            margin-bottom: 0.3rem;
+        }
 
 
 
+        .list-header ul li:nth-child(1) {
+            margin-left: 0.39rem;
+            margin-right: 2.3rem;
+        }
 
-    .user-list .list-item {
-        width: 16.2rem;
-        padding: 0.2rem 0;
-        margin-bottom: 0.1rem;
-        background: rgba(255, 255, 255, 1);
-        border-radius: 0.1rem;
-    }
+        .list-header ul li:nth-child(2) {
+            margin-right: 2.6rem;
+        }
 
-    .user-list .list-item .list-number {
-        width: 0.32rem;
-        height: 0.32rem;
-        text-align: center;
-        line-height: 0.32rem;
-        background: rgba(255, 210, 222, 1);
-        border-radius: 50%;
-        margin-left: 0.4rem;
-        margin-right: 1.5rem;
-    }
+        .list-header ul li:nth-child(3) {
+            margin-right: 1.62rem;
+        }
 
-    .user-list .list-item .user {
-        margin-right: 1.5rem;
-    }
+        .list-header ul li:nth-child(4) {
+            margin-right: 1.8rem;
+        }
 
-    .user-list .list-item .user .user-imgs {
-        width: 0.74rem;
-        height: 0.74rem;
-        margin-right: 0.06rem;
-    }
-
-    .user-list .list-item .user .user-infos>p:nth-child(1),
-    .user-list .list-item .user .user-infos>p:nth-child(2) {
-        margin-bottom: 0.1rem;
-    }
-
-    .Code {
-        margin-right: 1.75rem;
-    }
-
-    .quan {
-        margin-right: 1.73rem;
-    }
-
-    .time {
-        margin-right: 1.49rem;
-    }
-
-    .hisBtn {
-        width: 1.26rem;
-        height: 0.4rem;
-        border: 0.01rem solid rgba(254, 54, 106, 1);
-        border-radius: 0.2rem;
-        cursor: pointer;
-    }
-
-    .unopen .sign .title-box>p {
-        margin-top: 0.31rem;
-    }
-
-    .unopen .sign .sign-line .left-box .left-info {
-        margin-top: 0.5rem;
-    }
-
-    .unopen .sign .sign-line .left-box .left-info>span:last-child {
-        margin-top: -0.12rem;
-    }
-</style>
+        .list-header ul li:nth-child(5) {
+            margin-right: 2.55rem;
+        }
 
 
-<div class="Tab-three flex col fl-align">
-    <div class="title-line">
-        <span class="fz-18 f-fwb f-wb c-6a">夺宝明细</span>
-        <span class="fz-16 c-4f f-fm f-wb">>夺宝记录</span>
-    </div>
 
-    <!-- 开奖 -->
-    <div class="opens ">
-        <div class="sign flex col fl-align">
-            <div class="title-box">
-                <p class="fz-18 c-ff f-fmb f-wb">本次中奖码</p>
-                <p class="fz-26 c-b3 f-wb f-fmb">10010588</p>
-            </div>
-            <div class="sign-line flex row fl-align">
 
-                <div class="left-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">中奖用户</p>
+        .user-list .list-item {
+            width: 16.2rem;
+            padding: 0.2rem 0;
+            margin-bottom: 0.1rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.1rem;
+        }
+
+        .user-list .list-item .list-number {
+            width: 0.32rem;
+            height: 0.32rem;
+            text-align: center;
+            line-height: 0.32rem;
+            background: rgba(255, 210, 222, 1);
+            border-radius: 50%;
+            margin-left: 0.4rem;
+            margin-right: 1.5rem;
+        }
+
+        .user-list .list-item .user {
+            margin-right: 1.5rem;
+        }
+
+        .user-list .list-item .user .user-imgs {
+            width: 0.74rem;
+            height: 0.74rem;
+            margin-right: 0.06rem;
+        }
+
+        .user-list .list-item .user .user-infos>p:nth-child(1),
+        .user-list .list-item .user .user-infos>p:nth-child(2) {
+            margin-bottom: 0.1rem;
+        }
+
+        .Code {
+            margin-right: 1.75rem;
+        }
+
+        .quan {
+            margin-right: 1.73rem;
+        }
+
+        .time {
+            margin-right: 1.49rem;
+        }
+
+        .hisBtn {
+            width: 1.26rem;
+            height: 0.4rem;
+            border: 0.01rem solid rgba(254, 54, 106, 1);
+            border-radius: 0.2rem;
+            cursor: pointer;
+        }
+
+        .unopen .sign .title-box>p {
+            margin-top: 0.31rem;
+        }
+
+        .unopen .sign .sign-line .left-box .left-info {
+            margin-top: 0.5rem;
+        }
+
+        .unopen .sign .sign-line .left-box .left-info>span:last-child {
+            margin-top: -0.12rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containers" class="flex row">
+        <!-- 左侧导航 -->
+        <nav id="navction"></nav>
+        <!-- 右侧内容 -->
+        <div id="Tab-content">
+            <div class="Tab-three flex col fl-align">
+                <div class="title-line">
+                    <span class="fz-18 f-fwb f-wb c-6a">夺宝明细</span>
+                    <span class="fz-16 c-4f f-fm f-wb">>夺宝记录</span>
+                </div>
+
+                <!-- 开奖 -->
+                <div class="opens ">
+                    <div class="sign flex col fl-align">
+                        <div class="title-box">
+                            <p class="fz-18 c-ff f-fmb f-wb">本次中奖码</p>
+                            <p class="fz-26 c-b3 f-wb f-fmb">10010588</p>
+                        </div>
+                        <div class="sign-line flex row fl-align">
+
+                            <div class="left-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">中奖用户</p>
+                                </div>
+
+                                <div class="info flex row fl-align">
+                                    <img src="resources/head.png" alt="" class="user-header">
+                                    <div class="user-info">
+                                        <p class="c-6a fz-16">
+                                            <span>账号：</span>
+                                            <span>15800000000</span>
+                                        </p>
+                                        <p class="c-6a fz-16">
+                                            <span>微信：</span>
+                                            <span>565656</span>
+                                        </p>
+                                        <p class="c-6a fz-16">
+                                            <span>昵称：</span>
+                                            <span>小小子</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="mid-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">本期奖品</p>
+                                </div>
+                                <div class="prize flex col fl-align">
+                                    <img src="resources/yue.jpg" alt="" class="prize-img">
+                                    <span class="fz-16 c-6a">地面的和坏坏坏</span>
+                                </div>
+
+                            </div>
+
+                            <div class="right-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">收货地址</p>
+                                </div>
+                                <div class="add-info">
+                                    <p class="c-6a fz-16">
+                                        <span>姓 名：</span>
+                                        <span>小小子</span>
+                                    </p>
+                                    <p class="c-6a fz-16">
+                                        <span>联系电话：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="c-6a fz-16">
+                                        <span>收货地址：</span>
+                                        <span>广州市白云区永泰新村XXX街道52号</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="search-line flex row fl-align">
+                        <span class="icon j-icon"></span>
+                        <div class="j-number flex col lineRight">
+                            <span class="fz-30 c-6a f-wb f-fmb">5656</span>
+                            <span class="fz-16 c-66 f-fm f-w4">参与夺宝人数</span>
+                        </div>
+                        <span class="fz-16 c-66 f-w4 f-fm">按代理手机号搜索</span>
+                        <i class="icon d-icon"></i>
+                        <div class="search flex row fl-align">
+                            <input type="text" placeholder="请输入搜索内容" maxlength="11">
+                            <i class="icon search-icon"></i>
+                        </div>
+                    </div>
+                    <div class="list-header">
+                        <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
+                            <li>序号</li>
+                            <li>用户信息</li>
+                            <li>夺宝码</li>
+                            <li>总夺宝券</li>
+                            <li>夺宝时间</li>
+                            <li>操作</li>
+                        </ul>
+                    </div>
+                    <!-- 列表 -->
+                    <div class="user-list">
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="info flex row fl-align">
-                        <img src="resources/head.png" alt="" class="user-header">
-                        <div class="user-info">
-                            <p class="c-6a fz-16">
-                                <span>账号：</span>
-                                <span>15800000000</span>
-                            </p>
-                            <p class="c-6a fz-16">
-                                <span>微信：</span>
-                                <span>565656</span>
-                            </p>
-                            <p class="c-6a fz-16">
-                                <span>昵称：</span>
-                                <span>小小子</span>
-                            </p>
+                <!-- 未开奖 -->
+                <div class="unopen hide">
+                    <div class="sign flex col fl-align">
+
+                        <div class="title-box">
+                            <p class="fz-18 c-ff f-fmb f-wb">暂未开奖</p>
+                        </div>
+
+                        <div class="sign-line flex row fl-align">
+
+                            <div class="left-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">中奖用户</p>
+                                </div>
+                                <div class="left-info flex col fl-align">
+                                    <span class="icon t-icon"></span>
+                                    <span class="fz-16 c-99">暂未开奖</span>
+                                </div>
+                            </div>
+
+                            <div class="mid-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">本期奖品</p>
+                                </div>
+                                <div class="prize flex col fl-align">
+                                    <img src="resources/yue.jpg" alt="" class="prize-img">
+                                    <span class="fz-16 c-6a">地面的和坏坏坏</span>
+                                </div>
+                            </div>
+
+                            <div class="right-box">
+                                <div class="title">
+                                    <p class="fz-18 c-ff f-fmb f-wb">参与人数</p>
+                                </div>
+                                <!-- 进度条 -->
+                            </div>
+
                         </div>
 
                     </div>
+                    <div class="search-line flex row fl-align">
+                        <span class="icon j-icon"></span>
+                        <div class="j-number flex col lineRight">
+                            <span class="fz-30 c-6a f-wb f-fmb">5656</span>
+                            <span class="fz-16 c-66 f-fm f-w4">参与夺宝人数</span>
+                        </div>
+                        <span class="fz-16 c-66 f-w4 f-fm">按代理手机号搜索</span>
+                        <i class="icon d-icon"></i>
+                        <div class="search flex row fl-align">
+                            <input type="text" placeholder="请输入搜索内容" maxlength="11">
+                            <i class="icon search-icon"></i>
+                        </div>
+                    </div>
+                    <div class="list-header">
+                        <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
+                            <li>序号</li>
+                            <li>用户信息</li>
+                            <li>夺宝码</li>
+                            <li>总夺宝券</li>
+                            <li>夺宝时间</li>
+                            <li>操作</li>
+                        </ul>
+                    </div>
+                    <!-- 列表 -->
+                    <div class="user-list">
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+                            <span class="list-number c-6a fz-16">1</span>
+                            <div class="user flex row fl-align">
+                                <img src="resources/head.png" class="user-imgs">
+                                <div class="user-infos">
+                                    <p class="fz-16 c-66">
+                                        <span>昵称：</span>
+                                        <span>987456</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>账号：</span>
+                                        <span>15800000000</span>
+                                    </p>
+                                    <p class="fz-16 c-66">
+                                        <span>备注：</span>
+                                        <span>你好</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
+                            <span class="quan fz-16 c-66 f-fm f-w4">66</span>
+                            <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
+                            <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
+                        </div>
+                    </div>
 
                 </div>
 
-                <div class="mid-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">本期奖品</p>
-                    </div>
-                    <div class="prize flex col fl-align">
-                        <img src="resources/yue.jpg" alt="" class="prize-img">
-                        <span class="fz-16 c-6a">地面的和坏坏坏</span>
-                    </div>
-
-                </div>
-
-                <div class="right-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">收货地址</p>
-                    </div>
-                    <div class="add-info">
-                        <p class="c-6a fz-16">
-                            <span>姓 名：</span>
-                            <span>小小子</span>
-                        </p>
-                        <p class="c-6a fz-16">
-                            <span>联系电话：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="c-6a fz-16">
-                            <span>收货地址：</span>
-                            <span>广州市白云区永泰新村XXX街道52号</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="search-line flex row fl-align">
-            <span class="icon j-icon"></span>
-            <div class="j-number flex col lineRight">
-                <span class="fz-30 c-6a f-wb f-fmb">5656</span>
-                <span class="fz-16 c-66 f-fm f-w4">参与夺宝人数</span>
-            </div>
-            <span class="fz-16 c-66 f-w4 f-fm">按代理手机号搜索</span>
-            <i class="icon d-icon"></i>
-            <div class="search flex row fl-align">
-                <input type="text" placeholder="请输入搜索内容" maxlength="11">
-                <i class="icon search-icon"></i>
-            </div>
-        </div>
-        <div class="list-header">
-            <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
-                <li>序号</li>
-                <li>用户信息</li>
-                <li>夺宝码</li>
-                <li>总夺宝券</li>
-                <li>夺宝时间</li>
-                <li>操作</li>
-            </ul>
-        </div>
-        <!-- 列表 -->
-        <div class="user-list">
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
-            </div>
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
-            </div>
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
             </div>
         </div>
     </div>
-
-    <!-- 未开奖 -->
-    <div class="unopen hide">
-        <div class="sign flex col fl-align">
-
-            <div class="title-box">
-                <p class="fz-18 c-ff f-fmb f-wb">暂未开奖</p>
-            </div>
-
-            <div class="sign-line flex row fl-align">
-
-                <div class="left-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">中奖用户</p>
-                    </div>
-                    <div class="left-info flex col fl-align">
-                        <span class="icon t-icon"></span>
-                        <span class="fz-16 c-99">暂未开奖</span>
-                    </div>
-                </div>
-
-                <div class="mid-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">本期奖品</p>
-                    </div>
-                    <div class="prize flex col fl-align">
-                        <img src="resources/yue.jpg" alt="" class="prize-img">
-                        <span class="fz-16 c-6a">地面的和坏坏坏</span>
-                    </div>
-                </div>
-
-                <div class="right-box">
-                    <div class="title">
-                        <p class="fz-18 c-ff f-fmb f-wb">参与人数</p>
-                    </div>
-                    <!-- 进度条 -->
-                </div>
-
-            </div>
-
-        </div>
-        <div class="search-line flex row fl-align">
-            <span class="icon j-icon"></span>
-            <div class="j-number flex col lineRight">
-                <span class="fz-30 c-6a f-wb f-fmb">5656</span>
-                <span class="fz-16 c-66 f-fm f-w4">参与夺宝人数</span>
-            </div>
-            <span class="fz-16 c-66 f-w4 f-fm">按代理手机号搜索</span>
-            <i class="icon d-icon"></i>
-            <div class="search flex row fl-align">
-                <input type="text" placeholder="请输入搜索内容" maxlength="11">
-                <i class="icon search-icon"></i>
-            </div>
-        </div>
-        <div class="list-header">
-            <ul class="flex fl-align fz-16 c-8a f-fmb f-wb">
-                <li>序号</li>
-                <li>用户信息</li>
-                <li>夺宝码</li>
-                <li>总夺宝券</li>
-                <li>夺宝时间</li>
-                <li>操作</li>
-            </ul>
-        </div>
-        <!-- 列表 -->
-        <div class="user-list">
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
-            </div>
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
-            </div>
-            <div class="list-item flex row fl-align">
-                <span class="list-number c-6a fz-16">1</span>
-                <div class="user flex row fl-align">
-                    <img src="resources/head.png" class="user-imgs">
-                    <div class="user-infos">
-                        <p class="fz-16 c-66">
-                            <span>昵称：</span>
-                            <span>987456</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>账号：</span>
-                            <span>15800000000</span>
-                        </p>
-                        <p class="fz-16 c-66">
-                            <span>备注：</span>
-                            <span>你好</span>
-                        </p>
-                    </div>
-                </div>
-                <span class="Code fz-16 c-66 f-fm f-w4">10010220</span>
-                <span class="quan fz-16 c-66 f-fm f-w4">66</span>
-                <span class="time fz-16 c-66 f-fm f-w4">2019-01-06 12:12:12</span>
-                <button class="hisBtn fz-16 c-6a">历史夺宝记录</button>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
 <script>
+    $(function () {
+        // 加载导航部分
+        $('#navction').load('nav.html');
 
-
+    })
 </script>
+
+</html>
