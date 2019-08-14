@@ -1,3 +1,68 @@
+<style>
+    /* 左边导航 */
+
+
+    /* 一级导航 */
+    .nav-one>li {
+        margin-bottom: 0.36rem;
+        cursor: pointer;
+    }
+
+    .nav-one>li:first-child {
+        margin-top: 0.6rem;
+    }
+
+    .nav-one>li>span {
+        display: inline-block;
+        width: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.4rem;
+    }
+
+    .choose-nav-one-span {
+        color: #FE366A;
+        font-weight: bold;
+    }
+
+    /* 二级导航 */
+    .nav-two {
+        margin-top: 0.36rem;
+    }
+
+    .choose-nav-two {
+        background: linear-gradient(to right, #FFDEE7, #ffffff);
+    }
+
+    .nav-two>li {
+        height: 0.5rem;
+    }
+
+    .nav-two>li>span:first-child {
+        display: inline-block;
+        width: 0.04rem;
+        height: 0.5rem;
+        margin-right: 0.7rem;
+    }
+
+    .nline {
+        background: #FE366A;
+        box-shadow: 2px 0px 4px 0px rgba(217, 14, 67, 0.4);
+    }
+
+    .choose-nav-two-span {
+        text-shadow: 0rem 0.02rem 0.01rem rgba(254, 54, 106, 0.5);
+        color: #FE366A;
+        font-weight: bold;
+    }
+
+
+    /* 导航 */
+    #navction {
+        width: 2.4rem;
+        background: #ffffff;
+    }
+</style>
+
 <ul class="nav-one fz-16 f-fwm c-7b">
     <li data-oid="0">
         <span>首页</span>
@@ -117,6 +182,6 @@
             $(this).siblings().children().eq(0).removeClass('nline');
         })
 
-        
+
     })
 </script>
