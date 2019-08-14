@@ -329,7 +329,7 @@ h6 {
 /*容器*/
 #containers {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background: #F2F2F2;
     position: relative;
 }
@@ -361,63 +361,75 @@ h6 {
 }
 
 
-/* 导航部分样式 start */
 
-
-#navction>ul>li {
-    margin-bottom: 0.36rem;
-    cursor: pointer;
-    position: relative;
-}
-
-#navction>ul>li:first-child {
-    margin-top: 0.6rem;
-}
-
-#navction>ul>li>span,
-#navction>ul>li .list-item {
-    margin-left: 0.6rem;
-}
-
-#navction>ul>li .list-item>span {
-    display: block;
-    width: 0.95rem;
-    margin-right: 0.49rem;
-}
-
-.scend-list {
-    margin-top: 0.36rem;
-}
-
-.scend-list>ul>li {
+/* 遮罩 */
+.cover {
     width: 100%;
-    height: 0.52rem;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+.prompt {
+    width: 6rem;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0.1rem;
+    z-index: 300;
+    margin: auto;
+}
+
+.prompt .title {
+    text-align: center;
+    padding: 0.2rem 0rem;
+    background: #FE366A;
+    border-radius: 0.1rem 0.1rem 0 0;
+    margin-bottom: 0.2rem;
+}
+
+.prompt .prompt-info p {
+    margin-bottom: 0.17rem;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.scend-list>ul>li .line {
-    display: block;
-    width: 0.04rem;
-    height: 0.52rem;
+.prompt .prompt-info p span:first-child {
+    display: inline-block;
+    width: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.prompt .prompt-info p span:last-child {
+    display: inline-block;
+    width: 4.1rem;
+}
+
+.prompt .prompt-info p:nth-child(5) {
+    margin-bottom: 0.3rem;
+}
+
+.prompt .prompt-info p:last-child {
+    margin-bottom: 0.3rem;
+}
+
+.prompt .prompt-info p>button {
+    cursor: pointer;
+    border-radius: 0.21rem;
+}
+
+.prompt .prompt-info p .canel {
+    width: 1.06rem;
+    height: 0.42rem;
+    border: 0.01rem solid rgba(254, 54, 106, 1);
+    margin-left: 1.2rem;
+    margin-right: 1.48rem;
+}
+
+.prompt .prompt-info p .sure {
+    width: 1.06rem;
+    height: 0.42rem;
     background: rgba(254, 54, 106, 1);
-    box-shadow: 2px 0px 4px 0px rgba(217, 14, 67, 0.4);
 }
-
-.scend-list>ul>li>span:nth-child(2) {
-    margin-left: 0.79rem;
-}
-
-.scend-list-name {
-    text-shadow: 0rem 0.02rem 0.01rem rgba(254, 54, 106, 0.5);
-    color:#FE366A;
-    font-weight: bold;
-}
-
-.nav-choose {
-    color: #FE366A;
-    font-weight: bold;
-}
-
-/* 导航部分样式 end */

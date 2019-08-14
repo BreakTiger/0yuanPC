@@ -12,89 +12,68 @@
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/paging.css">
     <style>
+        /* 导航 */
         #navction {
             width: 2.4rem;
             background: #ffffff;
         }
 
+        /* Tab容器 */
         #Tab-content {
             width: 16.8rem;
         }
 
-        .empty {
-            height: 100%;
-        }
-
-
-        .cover {
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 200;
-        }
-
-        .prompt {
-            width: 6rem;
-            background: rgba(255, 255, 255, 1);
-            border-radius: 0.1rem;
-            z-index: 300;
-            margin: auto;
-        }
-
-        .prompt .title {
-            text-align: center;
-            padding: 0.2rem 0rem;
-            background: #FE366A;
-            border-radius: 0.1rem 0.1rem 0 0;
-            margin-bottom: 0.2rem;
-        }
-
-        .prompt .prompt-info p {
-            margin-bottom: 0.17rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .prompt .prompt-info p span:first-child {
-            display: inline-block;
-            width: 0.8rem;
-            margin-left: 0.5rem;
-        }
-
-        .prompt .prompt-info p span:last-child {
-            display: inline-block;
-            width: 4.1rem;
-        }
-
-        .prompt .prompt-info p:nth-child(5) {
-            margin-bottom: 0.3rem;
-        }
-
-        .prompt .prompt-info p:last-child {
-            margin-bottom: 0.3rem;
-        }
-
-        .prompt .prompt-info p>button {
+        /* 一级导航 */
+        .nav-one>li {
+            margin-bottom: 0.36rem;
             cursor: pointer;
-            border-radius: 0.21rem;
         }
 
-        .prompt .prompt-info p .canel {
-            width: 1.06rem;
-            height: 0.42rem;
-            border: 0.01rem solid rgba(254, 54, 106, 1);
-            margin-left: 1.2rem;
-            margin-right: 1.48rem;
+        .nav-one>li:first-child {
+            margin-top: 0.6rem;
         }
 
-        .prompt .prompt-info p .sure {
-            width: 1.06rem;
-            height: 0.42rem;
-            background: rgba(254, 54, 106, 1);
+        .nav-one>li>span {
+            display: inline-block;
+            width: 1rem;
+            margin-left: 0.5rem;
+            margin-right: 0.4rem;
+        }
+
+        .choose-nav-one-span {
+            color: #FE366A;
+            font-weight: bold;
+        }
+
+        /* 二级导航 */
+        .nav-two {
+            margin-top: 0.36rem;
+        }
+
+        .choose-nav-two {
+            background: linear-gradient(to right, #FFDEE7, #ffffff);
+        }
+
+        .nav-two>li {
+            height: 0.5rem;
+        }
+
+        .nav-two>li>span:first-child {
+            display: inline-block;
+            width: 0.02rem;
+            height: 0.5rem;
+            margin-right: 0.7rem;
+        }
+
+        .nline {
+            background: #FE366A;
+            box-shadow: 2px 0px 4px 0px rgba(217, 14, 67, 0.4);
+        }
+
+        .choose-nav-two-span {
+            text-shadow: 0rem 0.02rem 0.01rem rgba(254, 54, 106, 0.5);
+            color: #FE366A;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -103,61 +82,97 @@
     <div id="containers" class="flex row">
         <!-- 左侧导航 -->
         <nav id="navction" class="empty">
-            <ul>
-                <li data-nid="0">
-                    <span class="fz-16 f-fwm c-7b">首页</span>
+
+            <ul class="nav-one fz-16 f-fwm c-7b">
+                <li>
+                    <span>首页</span>
                 </li>
-                <li data-nid="1">
-                    <div class="list-item flex row fl-alig">
-                        <span class="fz-16 f-fwm c-7b">APP首页设置</span>
-                        <i class="icon m-icon"></i>
-                        <i class="icon d-icon hide"></i>
-                    </div>
+                <li>
+                    <span>APP首页设置</span>
+                    <i class="icon m-icon"></i>
+                    <i class="icon d-icon hide"></i>
+                    <ul class="nav-two hides">
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                    </ul>
                 </li>
-                <li data-nid="2">
-                    <div class="list-item flex row fl-alig">
-                        <span class="fz-16 f-fwm c-7b">APP内容管理</span>
-                        <i class="icon m-icon"></i>
-                        <i class="icon d-icon hide"></i>
-                    </div>
+                <li>
+                    <span>APP内容管理</span>
+                    <i class="icon m-icon"></i>
+                    <i class="icon d-icon hide"></i>
+                    <ul class="nav-two hides">
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                    </ul>
                 </li>
-                <li data-nid="3">
-                    <div class="list-item flex row fl-alig">
-                        <span class="fz-16 f-fwm c-7b">免单商品</span>
-                        <i class="icon m-icon"></i>
-                        <i class="icon d-icon hide"></i>
-                    </div>
+                <li>
+                    <span>免单商品</span>
+                    <i class="icon m-icon"></i>
+                    <i class="icon d-icon hide"></i>
+                    <ul class="nav-two hides">
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                    </ul>
                 </li>
-                <li data-nid="4">
-                    <div class="list-item flex row fl-alig">
-                        <span class="c-7b fz-16 f-fwm">0元夺宝</span>
-                        <i class="icon m-icon "></i>
-                        <i class="icon d-icon hide"></i>
-                    </div>
-                    <div class="scend-list hide">
-                        <ul>
-                            <li class="b-tor">
-                                <span class="line v-h"></span>
-                                <span class="scend-list-name fz-16 c-7b f-fwm">发布夺宝</span>
-                            </li>
-                            <li>
-                                <span class="line "></span>
-                                <span class="fz-16 f-fwm c-7b">夺宝记录</span>
-                            </li>
-                        </ul>
-                    </div>
+                <li>
+                    <span>0元夺宝</span>
+                    <i class="icon m-icon"></i>
+                    <i class="icon d-icon hide"></i>
+                    <ul class="nav-two hides">
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>发布夺宝</span>
+                        </li>
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>夺宝记录</span>
+                        </li>
+                    </ul>
                 </li>
-                <li data-nid="5">
-                    <span class="fz-16 f-fwm c-7b">拉新活动</span>
+                <li>
+                    <span>APP内容管理</span>
+                    <i class="icon m-icon"></i>
+                    <i class="icon d-icon hide"></i>
+                    <ul class="nav-two hides">
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                        <li class="flex row fl-align">
+                            <span></span>
+                            <span>二级菜单</span>
+                        </li>
+                    </ul>
                 </li>
-                <li data-nid="6">
-                    <span class="fz-16 f-fwm c-7b">我的工具</span>
+                <li>
+                    <span>拉新活动</span>
                 </li>
-                <li data-nid="7">
-                    <span class="fz-16 f-fwm c-7b">消息推送</span>
+                <li>
+                    <span>我的工具</span>
                 </li>
-                <li data-nid="8">
-                    <span class="fz-16 f-fwm c-7b">免单商品信息</span>
+                <li>
+                    <span>消息推送</span>
+                </li>
+                <li>
+                    <span>免单商品信息</span>
                 </li>
             </ul>
         </nav>
@@ -215,35 +230,28 @@
     $(function () {
 
         // 一级导航
-        $('#navction ul').on('click', 'li', function () {
-            let cdom = $(this).children()
-            // 通过判断子节点是否存在list-item样式来判断是否存在二级二级导航
-            if (cdom.hasClass('list-item')) {
-                // 再获取俩个图标的状态
-                let iconone = cdom.find('.m-icon')
-                let icontwo = cdom.find('.d-icon')
-                if (iconone.hasClass('hide')) {
-                    cdom.find('.d-icon').addClass('hide').siblings().removeClass('hide');
-                    // 隐藏二级导航：
-                    $(this).find('.scend-list').addClass('hide')
-                } else if (icontwo.hasClass('hide')) {
-                    cdom.find('.m-icon').addClass('hide').siblings().removeClass('hide');
-                    // 显示二级导航：
-                    $(this).find('.scend-list').removeClass('hide');
-                    // 二级导航
-                    $(".scend-list ul").on('click', 'li', function (e) {
-                        console.log(11111);
-                        e.stopPropagation();
-
-                    })
-                }
-            } else {
-                let nid = $(this).attr("data-nid")
-                console.log('一级的id(无二级导航):', nid);
-                // 用ID来判断，该执行什么操作
-            }
+        $('.nav-one').on('click', 'li', function () {
+            lnav(); //循环
+            $(this).children().eq(0).addClass('choose-nav-one-span');
+            //显示隐藏二级菜单
+            $(this).find('ul').slideToggle();
+            $(this).siblings().children('ul').slideUp();
         })
 
+        function lnav() {
+            $('#navction ul').find('li').each(function (index, e) {
+                $(this).children().eq(0).removeClass('choose-nav-one-span')
+            })
+        }
+
+        // 二级导航
+        $('.nav-two').on('click', 'li', function (e) {
+            e.stopPropagation();
+            console.log($(this).children())
+            $(this).addClass('choose-nav-two').siblings().removeClass('choose-nav-two');
+            $(this).children().eq(0).addClass('nline')
+            $(this).siblings().children().eq(0).removeClass('nline');
+        })
 
 
 
