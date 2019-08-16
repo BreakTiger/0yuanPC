@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/Public/treasure/css/base.css">
     <link rel="stylesheet" href="/Public/treasure/css/common.css">
     <link rel="stylesheet" href="/Public/treasure/css/icon.css">
-    <link rel="stylesheet" href="/Public/treasure/css/paging.css">
     <style>
         .user-base {
             width: 16.20rem;
@@ -27,7 +26,6 @@
             padding-top: 0.15rem;
             padding-bottom: 0.17rem;
             margin-bottom: 0.2rem;
-            border: 0.01rem solid #F2F2F2;
         }
 
         .title-line>span {
@@ -61,7 +59,7 @@
         }
 
         .users-base-infos {
-            margin-right: 1.2rem;
+            margin-right: 1rem;
         }
 
         .users-base-infos>p {
@@ -144,19 +142,24 @@
         }
 
         .good-list .list-contents .list-item>span:nth-child(2) {
-            margin-right: 0.8rem;
+            width: 1.15rem;
+            margin-right: 0.6rem;
         }
 
         .good-list .list-contents .list-item>span:nth-child(3) {
-            margin-right: 0.93rem;
+            width: 1.2rem;
+            text-align: center;
+            margin-right: 0.55rem;
         }
 
         .good-list .list-contents .list-item>span:nth-child(4) {
-            margin-right: 1.18rem;
+            margin-right: 0.88rem;
         }
 
         .good-list .list-contents .list-item>span:nth-child(5) {
-            margin-right: 1.05rem;
+            width: 0.5rem;
+            text-align: center;
+            margin-right: 0.9rem;
         }
 
         .good-list .list-contents .list-item>span:nth-child(6) {
@@ -168,7 +171,13 @@
         }
 
         .good-list .list-contents .list-item>span:nth-child(8) {
-            margin-right: 1.05rem;
+            margin-right: 0.88rem;
+        }
+
+        .good-info-re {
+            width: 16.2rem;
+            text-align: center;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -190,47 +199,47 @@
                 <div class="user-base flex row fl-align">
                     <div class="users-infos flex row fl-align">
                         <div class="users-imgs flex col fl-align">
-                            <img src="resources/head.png" alt="">
+                            <img src="" alt="" class="user-header">
                             <span class="fz-14 c-74">合伙人</span>
                         </div>
                         <div class="users-base-infos">
                             <p class="fz-16 c-66 f-fm f-w4">
                                 <span>账号：</span>
-                                <span>15800000000</span>
+                                <span class="account"></span>
                             </p>
                             <p class="fz-16 c-66 f-fm f-w4">
-                                <span>微信：</span>
-                                <span>123654</span>
+                                <span>备注：</span>
+                                <span class="beizhu"></span>
                             </p>
                             <p class="fz-16 c-66 f-fm f-w4">
                                 <span>昵称：</span>
-                                <span>987456</span>
+                                <span class="nick"></span>
                             </p>
                             <p class="fz-16 c-99 f-fm f-w4">
                                 <span>注册时间：</span>
-                                <span>2019-01-01 15:00:00</span>
+                                <span class="ltime"></span>
                             </p>
                         </div>
                     </div>
 
                     <div class="have-quan lineRight flex col fl-align">
                         <span class="fz-16 c-66">所持夺宝券</span>
-                        <span class="fz-56 c-6a f-fb f-wb">56</span>
+                        <span class="haves fz-56 c-6a f-fb f-wb"></span>
                     </div>
 
                     <div class="join-times lineRight flex col fl-align">
                         <span class="fz-16 c-66">参与夺宝次数</span>
-                        <span class="fz-56 c-6a f-fb f-wb">56</span>
+                        <span class="joined fz-56 c-6a f-fb f-wb"></span>
                     </div>
 
                     <div class="winning lineRight flex col fl-align">
                         <span class="fz-16 c-66">中奖次数</span>
-                        <span class="fz-56 c-6a f-fb f-wb">6</span>
+                        <span class="gets fz-56 c-6a f-fb f-wb"></span>
                     </div>
 
                     <div class="Belong flex col fl-align">
                         <span class="fz-16 c-66">所属总代</span>
-                        <span class="fz-56 c-6a f-fb f-wb">12138</span>
+                        <span class="belongs fz-56 c-6a f-fb f-wb"></span>
                     </div>
 
                 </div>
@@ -250,9 +259,8 @@
                 </div>
 
                 <div class="good-list">
-
                     <div class="list-contents">
-                        <div class="list-item flex row fl-align">
+                        <!-- <div class="list-item flex row fl-align">
                             <img src="resources/yue.jpg">
                             <span class="fz-16 c-66">耐克官方旗舰店</span>
                             <span class="fz-16 c-66">21568454</span>
@@ -306,10 +314,15 @@
                             <span class="fz-16 c-66">2019-01-06 12:12:12</span>
                             <span class="fz-16 c-66">是</span>
                             <span class="fz-16 c-66">12355556</span>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- 分页器 -->
-                    <div class="pagger-box pagger flex row fl-align" id="box"></div>
+                    <div id="pagelist1" class="page_div page_div_one"></div>
+
+                </div>
+
+                <div class="good-info-re hide">
+
                 </div>
 
             </div>
@@ -317,25 +330,95 @@
     </div>
 </body>
 <script src="/Public/treasure/js/jquery.min.js"></script>
-<script src="/Public/treasure/js/paging.js"></script>
+<script src="/Public/treasure/js/pageMe.js"></script>
 <script src="/Public/treasure/js/common.js"></script>
 <script>
     $(function () {
         // 加载导航部分
         $('#navction').load('nav.html');
 
-        // 分页器
-        var setTotalCount = 15;
-        $('#box').paging({
-            initPageNo: 1, // 初始页码
-            totalPages: 750, //总页数
-            totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-            slideSpeed: 600, // 缓动速度。单位毫秒
-            jump: true, //是否支持跳转
-            callback: function (page) { // 回调函数
-                console.log(page);
+        let sid = GetQueryString('sid');
+        user(sid)
+
+        function user(e) {
+            ajax_post('/Treasure/treasureUserInfo', {
+                sid: e
+            }, function (r) {
+                // console.log(r);
+                let data = r.data
+                // console.log(data);
+                $('.account').html(data.phone);
+                $('.beizhu').html(data.remark);
+                $('.nick').html(data.nickname);
+                $('.ltime').html(data.reg_time);
+
+                $('.haves').html(data.ticket_number);
+                $('.joined').html(data.join_number);
+                $('.gets').html(data.win_number);
+                $('.belongs').html(data.seller_id);
+                $('.user-header').attr('src', data.headimgurl);
+            })
+        }
+
+
+        hislist(sid, 1);
+
+
+        function hislist(sid, page) {
+            let param = {
+                sid: sid,
+                page: page
             }
-        })
+            ajax_post('/Treasure/treasureJoin', param, function (r) {
+                console.log(r);
+                let data = r.data
+                if (data) {
+                    $('.good-list').removeClass('hide');
+                    $('.good-info-re').addClass('hide');
+                    let list = data.list
+                    let html = ''
+                    for (let i = 0; i < list.length; i++) {
+                        html += '<div class="list-item flex row fl-align">' +
+                            '<img src="' + list[i].image + '">' +
+                            '<span class="fz-16 c-66 clamp1">' + list[i].name + '</span>' +
+                            '<span class="fz-16 c-66 clamp1">' + list[i].itemid + '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].cost_money + '/' + list[i].end_money +
+                            '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].join_number + '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].start_time + '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].end_time + '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].is_winning + '</span>' +
+                            '<span class="fz-16 c-66">' + list[i].win_code + '</span>' +
+                            '</div>'
+                    }
+                    $('.good-list .list-contents').html(html);
+                   
+
+                    let dan = parseInt(data.cu_page)
+
+                    let totals = parseInt(data.total_page)
+
+                    let tnumber = parseInt(data.total_number)
+                    
+                    $("#pagelist1").paging({
+                        pageNum: dan, // 当前页面
+                        totalNum: totals, // 总页码
+                        totalList: tnumber, // 记录总数量
+                        callback: function (num) { //回调函数
+                            hislist(sid,num);
+                        }
+                    });
+
+                } else {
+                    let msg = r.msg
+                    console.log(msg)
+                    $('.good-list').addClass('hide');
+                    $('.good-info-re').removeClass('hide');
+                    $('.good-info-re').html(msg);
+                }
+            })
+        }
+
     })
 </script>
 

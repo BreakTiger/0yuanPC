@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/Public/treasure/css/base.css">
     <link rel="stylesheet" href="/Public/treasure/css/common.css">
     <link rel="stylesheet" href="/Public/treasure/css/icon.css">
-    <link rel="stylesheet" href="/Public/treasure/css/paging.css">
     <style>
         .Tab-two .title-line {
             width: 100%;
@@ -156,15 +155,15 @@
         .price {
             width: 0.72rem;
             text-align: center;
-            margin-right: 0.51rem;
+            margin-right: 0.45rem;
         }
 
         .commission {
-            margin-right: 0.4rem;
+            width: 0.6rem;
+            margin-right: 0.35rem;
         }
 
         .coupons {
-            margin-top: -0.18rem;
             margin-right: 0.57rem;
         }
 
@@ -173,18 +172,26 @@
         }
 
         .n-num {
-            margin-right: 0.79rem;
+            width: 0.4rem;
+            text-align: center;
+            margin-right: 0.9rem;
         }
 
         .j-num {
-            margin-right: 0.6rem;
+            margin-right: 0.7rem;
         }
 
         .s-time {
+            display: inline-block;
+            width: 1.6rem;
+            text-align: center;
             margin-right: 0.41rem;
         }
 
         .e-time {
+            display: inline-block;
+            width: 1.6rem;
+            text-align: center;
             margin-right: 0.39rem;
         }
 
@@ -194,6 +201,12 @@
             border: 0.01rem solid rgba(254, 54, 106, 1);
             border-radius: 0.2rem;
             cursor: pointer;
+        }
+
+        .nodata {
+            width: 100%;
+            text-align: center;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -210,11 +223,14 @@
                 </div>
                 <div class="switch-line">
                     <ul class="flex fz-18 c-99">
-                        <li class="chose">夺宝中</li>
-                        <li>待开奖</li>
-                        <li>已开奖</li>
-                        <li>全部</li>
+                        <li class="chose" data-id="1">夺宝中</li>
+                        <li data-id="2">待开奖</li>
+                        <li data-id="3">已开奖</li>
+                        <li data-id="0">全部</li>
                     </ul>
+                    <!-- 隐藏域 -->
+                    <!-- 储存选中的类别 默认为：1 即：夺宝中-->
+                    <input type="hidden" value="1" class="switchID">
                 </div>
                 <!-- 表头 -->
                 <div class="list-header">
@@ -236,188 +252,185 @@
                 </div>
 
                 <div class="list-content">
-
                     <div class="lists">
-                        <div class="list-item flex row fl-align">
-                            <!-- 排序 -->
-                            <div class="sorting flex row fl-align">
-                                <span class="fz-16 c-66">1</span>
-                                <i class="icon ed-icon"></i>
-                            </div>
-                            <!-- 夺宝ID -->
-                            <span class="IDcode fz-16 c-66 clamp1">236</span>
-                            <!-- 商品图片 -->
-                            <img src="resources/yue.jpg" class="good-img">
-                            <!-- 短标题 -->
-                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
-                            <!-- 商品ID -->
-                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
-                            <!-- 实际价/到手价 -->
-                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
-                            <!-- 佣金 -->
-                            <span class="commission fz-16 c-66">20%</span>
-                            <!-- 优惠券 -->
-                            <div class="coupons flex col fl-align">
-                                <a href="javascript:;">链接</a>
-                                <span class="fz-16 c-66 clamp1">100/200</span>
-                            </div>
-                            <!-- 所需人数 -->
-                            <span class="n-num fz-16 c-66 clamp1">200</span>
-                            <!-- 参与人数 -->
-                            <span class="j-num fz-16 c-66 clamp1">150</span>
-                            <!-- 开始时间 -->
-                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 结束时间 -->
-                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 是否中奖 -->
-                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
-                        </div>
 
-                        <div class="list-item flex row fl-align">
-                            <!-- 排序 -->
-                            <div class="sorting flex row fl-align">
-                                <span class="fz-16 c-66">1</span>
-                                <i class="icon ed-icon"></i>
-                            </div>
-                            <!-- 夺宝ID -->
-                            <span class="IDcode fz-16 c-66 clamp1">236</span>
-                            <!-- 商品图片 -->
-                            <img src="resources/yue.jpg" class="good-img">
-                            <!-- 短标题 -->
-                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
-                            <!-- 商品ID -->
-                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
-                            <!-- 实际价/到手价 -->
-                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
-                            <!-- 佣金 -->
-                            <span class="commission fz-16 c-66">20%</span>
-                            <!-- 优惠券 -->
-                            <div class="coupons flex col fl-align">
-                                <a href="javascript:;">链接</a>
-                                <span class="fz-16 c-66 clamp1">100/200</span>
-                            </div>
-                            <!-- 所需人数 -->
-                            <span class="n-num fz-16 c-66 clamp1">200</span>
-                            <!-- 参与人数 -->
-                            <span class="j-num fz-16 c-66 clamp1">150</span>
-                            <!-- 开始时间 -->
-                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 结束时间 -->
-                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 是否中奖 -->
-                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
-                        </div>
+                        <!-- <div class="list-item flex row fl-align">
 
-                        <div class="list-item flex row fl-align">
-                            <!-- 排序 -->
                             <div class="sorting flex row fl-align">
                                 <span class="fz-16 c-66">1</span>
                                 <i class="icon ed-icon"></i>
                             </div>
-                            <!-- 夺宝ID -->
-                            <span class="IDcode fz-16 c-66 clamp1">236</span>
-                            <!-- 商品图片 -->
-                            <img src="resources/yue.jpg" class="good-img">
-                            <!-- 短标题 -->
-                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
-                            <!-- 商品ID -->
-                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
-                            <!-- 实际价/到手价 -->
-                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
-                            <!-- 佣金 -->
-                            <span class="commission fz-16 c-66">20%</span>
-                            <!-- 优惠券 -->
-                            <div class="coupons flex col fl-align">
-                                <a href="javascript:;">链接</a>
-                                <span class="fz-16 c-66 clamp1">100/200</span>
-                            </div>
-                            <!-- 所需人数 -->
-                            <span class="n-num fz-16 c-66 clamp1">200</span>
-                            <!-- 参与人数 -->
-                            <span class="j-num fz-16 c-66 clamp1">150</span>
-                            <!-- 开始时间 -->
-                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 结束时间 -->
-                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 是否中奖 -->
-                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
-                        </div>
 
-                        <div class="list-item flex row fl-align">
-                            <!-- 排序 -->
-                            <div class="sorting flex row fl-align">
-                                <span class="fz-16 c-66">1</span>
-                                <i class="icon ed-icon"></i>
-                            </div>
-                            <!-- 夺宝ID -->
                             <span class="IDcode fz-16 c-66 clamp1">236</span>
-                            <!-- 商品图片 -->
-                            <img src="resources/yue.jpg" class="good-img">
-                            <!-- 短标题 -->
-                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
-                            <!-- 商品ID -->
-                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
-                            <!-- 实际价/到手价 -->
-                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
-                            <!-- 佣金 -->
-                            <span class="commission fz-16 c-66">20%</span>
-                            <!-- 优惠券 -->
-                            <div class="coupons flex col fl-align">
-                                <a href="javascript:;">链接</a>
-                                <span class="fz-16 c-66 clamp1">100/200</span>
-                            </div>
-                            <!-- 所需人数 -->
-                            <span class="n-num fz-16 c-66 clamp1">200</span>
-                            <!-- 参与人数 -->
-                            <span class="j-num fz-16 c-66 clamp1">150</span>
-                            <!-- 开始时间 -->
-                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 结束时间 -->
-                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 是否中奖 -->
-                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
-                        </div>
 
-                        <div class="list-item flex row fl-align">
-                            <!-- 排序 -->
-                            <div class="sorting flex row fl-align">
-                                <span class="fz-16 c-66">1</span>
-                                <i class="icon ed-icon"></i>
-                            </div>
-                            <!-- 夺宝ID -->
-                            <span class="IDcode fz-16 c-66 clamp1">236</span>
-                            <!-- 商品图片 -->
                             <img src="resources/yue.jpg" class="good-img">
-                            <!-- 短标题 -->
+
                             <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
-                            <!-- 商品ID -->
+
                             <span class="goodID fz-16 c-66 clamp1">21568454</span>
-                            <!-- 实际价/到手价 -->
+
                             <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
-                            <!-- 佣金 -->
+
                             <span class="commission fz-16 c-66">20%</span>
-                            <!-- 优惠券 -->
+
                             <div class="coupons flex col fl-align">
                                 <a href="javascript:;">链接</a>
                                 <span class="fz-16 c-66 clamp1">100/200</span>
                             </div>
-                            <!-- 所需人数 -->
+
                             <span class="n-num fz-16 c-66 clamp1">200</span>
-                            <!-- 参与人数 -->
+
                             <span class="j-num fz-16 c-66 clamp1">150</span>
-                            <!-- 开始时间 -->
+
                             <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 结束时间 -->
+
                             <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
-                            <!-- 是否中奖 -->
+
                             <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
                         </div>
+                        <div class="list-item flex row fl-align">
+
+                            <div class="sorting flex row fl-align">
+                                <span class="fz-16 c-66">1</span>
+                                <i class="icon ed-icon"></i>
+                            </div>
+
+                            <span class="IDcode fz-16 c-66 clamp1">236</span>
+
+                            <img src="resources/yue.jpg" class="good-img">
+
+                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
+
+                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
+
+                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
+
+                            <span class="commission fz-16 c-66">20%</span>
+
+                            <div class="coupons flex col fl-align">
+                                <a href="javascript:;">链接</a>
+                                <span class="fz-16 c-66 clamp1">100/200</span>
+                            </div>
+
+                            <span class="n-num fz-16 c-66 clamp1">200</span>
+
+                            <span class="j-num fz-16 c-66 clamp1">150</span>
+
+                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+
+                            <div class="sorting flex row fl-align">
+                                <span class="fz-16 c-66">1</span>
+                                <i class="icon ed-icon"></i>
+                            </div>
+
+                            <span class="IDcode fz-16 c-66 clamp1">236</span>
+
+                            <img src="resources/yue.jpg" class="good-img">
+
+                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
+
+                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
+
+                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
+
+                            <span class="commission fz-16 c-66">20%</span>
+
+                            <div class="coupons flex col fl-align">
+                                <a href="javascript:;">链接</a>
+                                <span class="fz-16 c-66 clamp1">100/200</span>
+                            </div>
+
+                            <span class="n-num fz-16 c-66 clamp1">200</span>
+
+                            <span class="j-num fz-16 c-66 clamp1">150</span>
+
+                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+
+                            <div class="sorting flex row fl-align">
+                                <span class="fz-16 c-66">1</span>
+                                <i class="icon ed-icon"></i>
+                            </div>
+
+                            <span class="IDcode fz-16 c-66 clamp1">236</span>
+
+                            <img src="resources/yue.jpg" class="good-img">
+
+                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
+
+                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
+
+                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
+
+                            <span class="commission fz-16 c-66">20%</span>
+
+                            <div class="coupons flex col fl-align">
+                                <a href="javascript:;">链接</a>
+                                <span class="fz-16 c-66 clamp1">100/200</span>
+                            </div>
+
+                            <span class="n-num fz-16 c-66 clamp1">200</span>
+
+                            <span class="j-num fz-16 c-66 clamp1">150</span>
+
+                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
+                        </div>
+                        <div class="list-item flex row fl-align">
+
+                            <div class="sorting flex row fl-align">
+                                <span class="fz-16 c-66">1</span>
+                                <i class="icon ed-icon"></i>
+                            </div>
+
+                            <span class="IDcode fz-16 c-66 clamp1">236</span>
+
+                            <img src="resources/yue.jpg" class="good-img">
+
+                            <span class="s-title fz-16 c-66 clamp1">耐克官方旗舰店</span>
+
+                            <span class="goodID fz-16 c-66 clamp1">21568454</span>
+
+                            <span class="price fz-16 c-66 clamp1">5.99/3.99</span>
+
+                            <span class="commission fz-16 c-66">20%</span>
+
+                            <div class="coupons flex col fl-align">
+                                <a href="javascript:;">链接</a>
+                                <span class="fz-16 c-66 clamp1">100/200</span>
+                            </div>
+
+                            <span class="n-num fz-16 c-66 clamp1">200</span>
+
+                            <span class="j-num fz-16 c-66 clamp1">150</span>
+
+                            <span class="s-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <span class="e-time fz-16 c-66 clamp1">2019-01-06 12:12:12</span>
+
+                            <button class="detailBtn fz-18 c-6a clamp1">夺宝明细</button>
+                        </div> -->
+
                     </div>
-
                     <!-- 分页器 -->
-                    <div class="pagger-box pagger flex row fl-align" id="box"></div>
-
+                    <div id="pagelist1" class="page_div page_div_one"></div>
                 </div>
+
+                <div class="nodata hides"></div>
 
             </div>
 
@@ -425,59 +438,105 @@
     </div>
 </body>
 <script src="/Public/treasure/js/jquery.min.js"></script>
-<script src="/Public/treasure/js/paging.js"></script>
+<script src="/Public/treasure/js/pageMe.js"></script>
 <script src="/Public/treasure/js/common.js"></script>
 <script>
     $(function () {
-
         // 加载导航部分
         $('#navction').load('nav.html');
+        // 分类导航切换
+        $('.switch-line ul').on('click', 'li', function () {
+            $(this).addClass('chose').siblings().removeClass('chose');
+            let id = $(this).attr('data-id')
+            $('.switchID').val(id);
+            // 调用记录的接口
+            kindlist(id, 1);
+        })
+        kindlist(1, 1)
 
-        // 页面初始化
-        kindlist(1, 1);
-
-        // 夺宝明细列表
-        function kindlist(status, pages) {
+        function kindlist(id, page) {
             let param = {
-                status: status,
-                page: pages
+                status: id,
+                page: page
             }
-            console.log('参数为：', param);
+            console.log('参数为：', param)
             ajax_post('/Treasure/treasureLog', param, function (r) {
-                console.log(r);
+                let data = r.data
+                console.log(data);
+                if (data) {
+                    $('.list-content').removeClass('hides');
+                    $('.nodata').addClass('hides');
+                    let list = data.list
+                    // console.log(list);
+                    let html = ''
+                    for (let i = 0; i < list.length; i++) {
+                        html += '<div class="list-item flex row fl-align" data-id=' + list[i]
+                            .activity_id +
+                            '>' +
+                            '<div class="sorting flex row fl-align">' +
+                            '<span class="fz-16 c-66">' + list[i].sort + '</span>' +
+                            '<i class="icon ed-icon">' + '</i>' +
+                            '</div>' +
+                            '<span class="IDcode fz-16 c-66 clamp1">' + list[i].activity_id +
+                            '</span>' +
+                            '<img class="good-img" src=' + list[i].image + '>' +
+                            '<span class="s-title fz-16 c-66 clamp1">' + list[i].name + '</span>' +
+                            '<span class="goodID fz-16 c-66 clamp1">' + list[i].itemid + '</span>' +
+                            '<span class="price fz-16 c-66 clamp1">' + list[i].cost_money + '/' + list[
+                                i]
+                            .end_money + '</span>' +
+                            '<span class="commission fz-16 c-66">' + list[i].rate + '</span>' +
+                            '<div class="coupons flex col fl-align">' +
+                            '<a href=' + list[i].couponlink + '>' + '链接' + '</a>' +
+                            '</div>' +
+                            '<span class="n-num fz-16 c-66 clamp1">' + list[i].final_number +
+                            '</span>' +
+                            '<span class="j-num fz-16 c-66 clamp1">' + list[i].now_number + '</span>' +
+                            '<span class="s-time fz-16 c-66 clamp1">' + list[i].start_time + '</span>' +
+                            '<span class="e-time fz-16 c-66 clamp1">' + list[i].end_time + '</span>' +
+                            '<button class="detailBtn fz-18 c-6a clamp1" data-id=' + list[i]
+                            .activity_id + '>' + '夺宝明细' + '</button>' +
+                            '</div>'
+                    }
+                    $('.list-content .lists').html(html);
+
+                    let dan = parseInt(data.cu_page)
+                    console.log('当前页：', dan);
+                    let total = parseInt(data.total_page)
+                    console.log('总页数：', total);
+                    let tnumber = parseInt(data.total_number)
+                    console.log('总数据条数：', tnumber);
+
+                    $("#pagelist1").paging({
+                        pageNum: dan, // 当前页面
+                        totalNum: total, // 总页码
+                        totalList: tnumber, // 记录总数量
+                        callback: function (num) { //回调函数
+                            console.log(num);
+                            let id = $('.switchID').val()
+                            console.log(id);
+                            kindlist(id, num);
+                        }
+                    });
+
+                } else {
+                    let msg = r.msg
+                    $('.nodata').html(msg);
+                    $('.list-content').addClass('hides');
+                    $('.nodata').removeClass('hides');
+                }
+
             })
         }
 
-
-        // 切换
-        $('.switch-line ul').on('click', 'li', function () {
-            $(this).addClass('chose').siblings().removeClass('chose');
-
+        $(document).on('click', '.detailBtn', function () {
+            let aid = $(this).attr('data-id')
+            console.log(aid);
+            window.location.href = "record-detail.html?aid=" + aid;
         })
 
 
 
-
-
-
-        // 夺宝明细按钮
-        $('.detailBtn').on('click', function () {
-            console.log('夺宝明细');
-        })
-
-
-        // 分页器
-        var setTotalCount = 15;
-        $('#box').paging({
-            initPageNo: 1, // 初始页码
-            totalPages: 750, //总页数
-            totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-            slideSpeed: 600, // 缓动速度。单位毫秒
-            jump: true, //是否支持跳转
-            callback: function (page) { // 回调函数
-                console.log(page);
-            }
-        })
     })
 </script>
 

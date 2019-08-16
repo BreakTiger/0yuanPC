@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="/Public/treasure/css/common.css">
     <link rel="stylesheet" href="/Public/treasure/css/icon.css">
     <link rel="stylesheet" href="/Public/treasure/css/paging.css">
+    <script type="text/javascript" charset="utf-8" src="/Public/assets/sell/js/browser-md5-file.js"></script>
     <style>
-        /* 发布 */
         .Tab-one .title-line {
             width: 100%;
             background: #ffffff;
             padding-top: 0.15rem;
             padding-bottom: 0.17rem;
-            border: 0.01rem solid #F2F2F2;
             margin-bottom: 0.3rem;
         }
 
@@ -31,6 +30,7 @@
             height: 9.1rem;
             background: rgba(255, 255, 255, 1);
             border-radius: 0.1rem;
+            margin-bottom: 0.1rem;
         }
 
         .input-content .line {
@@ -70,26 +70,24 @@
             text-indent: 0.2rem;
         }
 
-        .snedBtn {
-            width: 1.06rem;
-            text-align: center;
-            padding: 0.1rem 0;
-            background: rgba(254, 54, 106, 1);
-            border-radius: 0.21rem;
-            margin-left: 1.8rem;
-            margin-top: 0.4rem;
-            cursor: pointer;
+        /* 上传 */
+        .Up-box .s-img-list {
+            /* max-width: 8.17rem; */
+            height: 1rem;
         }
 
-        .Up-box .s-img {
+        .Up-box .s-img-list .s-img {
             width: 1rem;
             height: 1rem;
             position: relative;
-            margin-right: 0.1rem;
-            margin-left: 0.09rem;
+
         }
 
-        .Up-box .s-img>img {
+        .Up-box .s-img-list .s-img {
+            margin-right: 0.17rem;
+        }
+
+        .Up-box .s-img-list .s-img>img {
             width: 100%;
             height: 100%;
         }
@@ -104,7 +102,6 @@
         .add-box-hover {
             background: #E2E2E2;
         }
-
 
         .Up-box .add-box .add-icon-one,
         .Up-box .add-box .add-icon-two {
@@ -130,11 +127,22 @@
             z-index: 100;
             cursor: pointer;
         }
+
+        .snedBtn {
+            width: 1.06rem;
+            text-align: center;
+            padding: 0.1rem 0;
+            background: rgba(254, 54, 106, 1);
+            border-radius: 0.21rem;
+            margin-left: 1.8rem;
+            margin-top: 0.4rem;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
-    <div id="containers" class="flex row">
+    <div id="containers" class="flex row fl-align">
         <!-- 左侧导航 -->
         <nav id="navction"></nav>
         <!-- 右侧内容 -->
@@ -146,6 +154,8 @@
                 </div>
                 <!-- 输入内容 -->
                 <div class="input-content">
+
+                    <input type="hidden" class="bid" value="">
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">宝贝链接：</span>
                         <div class="put-box flex row fl-align">
@@ -153,6 +163,7 @@
                             <input type="text" placeholder="请粘贴或输入宝贝链接" class="link">
                         </div>
                     </div>
+
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">优惠券链接：</span>
                         <div class="put-box flex row fl-align">
@@ -162,6 +173,7 @@
                                 class="c-link">
                         </div>
                     </div>
+
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">宝贝短标题：</span>
                         <input type="text" placeholder="请输入宝贝标题" class="gname">
@@ -170,30 +182,53 @@
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">商品主图：</span>
                         <div class="Up-box flex row fl-align">
-                            <input type="hidden" value="" id="upimg">
+                            <!-- <input type="hidden" value="" id="upimg"> -->
+                            <input type="hidden" value="" id="banner_image1" />
                             <!-- 预览图 -->
-                            <!-- <div class="s-img">
-                                        <img src="resources/yue.jpg">
-                                        <i class="icon close-icon"></i>
-                                    </div> -->
-                            <!-- <div class="s-img">
-                                        <img src="resources/yue.jpg">
-                                        <i class="icon close-icon"></i>
-                                    </div> -->
+                            <!-- 最多七张 -->
+                            <div class="s-img-list flex row fl-align">
+                                <!-- <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div>
+                                <div class="s-img">
+                                    <img src="resources/yue.jpg">
+                                    <i class="icon close-icon"></i>
+                                </div> -->
+                            </div>
                             <!-- 添加框 -->
                             <div class="add-box flex row fl-align">
                                 <i class="icon add-icon-one hide"></i>
                                 <i class="icon add-icon-two "></i>
-                                <input type="file" class="upfiles">
+                                <input class="upfiles" type="file" multiple="multiple"
+                                    onchange="upload_img(this,'banner_image1','s-img-list','{$token}')" />
                             </div>
                         </div>
                     </div>
-
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">原价(元)：</span>
                         <input type="text" placeholder="请输入原价" class="oprice">
                     </div>
-
                     <div class="line flex row fl-align">
                         <span class="fz-16 c-60 f-fm">到手价(元)：</span>
                         <input type="text" placeholder="请输入到手价" class="price">
@@ -206,9 +241,13 @@
                         <span class="fz-16 c-60 f-fm">该活动所需人数(人)：</span>
                         <input type="text" placeholder="请输入人数" class="numbers">
                     </div>
-
+                    <div class="line flex row fl-align">
+                        <span class="fz-16 c-60 f-fm">活动开始时间：</span>
+                        <input type="text" placeholder="请输入活动开始时间" class="atime">
+                    </div>
                     <div class="snedBtn c-ff fz-16">立即发布</div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -222,23 +261,23 @@
             <div class="prompt-info">
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">商品标题：</span>
-                    <span class="fz-16 c-60 f-fm fw4 clamp1">驼背矫正器韩国背背佳隐形矫正带抖音放驼背神器</span>
+                    <span class="goodname fz-16 c-60 f-fm fw4 clamp1"></span>
                 </p>
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">商品链接：</span>
-                    <span class="fz-16 c-60 f-fm fw4 clamp1">https://uland.taobao.com/item.htm?id=54864814835</span>
+                    <span class="goodlink fz-16 c-60 f-fm fw4 clamp1"></span>
                 </p>
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">商品价格：</span>
-                    <span class="fz-16 c-60 f-fm fw4 clamp1">250元</span>
+                    <span class="goodprice fz-16 c-60 f-fm fw4 clamp1"></span>
                 </p>
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">到 手 价：</span>
-                    <span class="fz-16 c-60 f-fm fw4 clamp1">200元</span>
+                    <span class="goodcost fz-16 c-60 f-fm fw4 clamp1"></span>
                 </p>
                 <p>
                     <span class="fz-16 c-60 f-fwb f-wb">所需人数：</span>
-                    <span class="fz-16 c-60 f-fm fw4 clamp1">6000人</span>
+                    <span class="goodnumbers fz-16 c-60 f-fm fw4 clamp1"></span>
                 </p>
                 <p>
                     <button class="canel fz-16 c-6a">取消</button>
@@ -255,13 +294,91 @@
 <script src="/Public/treasure/js/paging.js"></script>
 <script src="/Public/treasure/js/common.js"></script>
 <script>
-    $(function () {
+    // 上传
+    function upload_img(obj, id_value, img_html, token, flag = 0) {
+        var file = $(obj)[0].files[0]
+        if (file.type.indexOf("image") == 0) {
+            if (file.size >= 5120000) {
+                $('#fq_alert_info').text('图片大小过大');
+                $('#fq_alert').modal({});
+                return;
+            }
+        } else {
+            $('#fq_alert_info').text('您选择的不是图片哦！');
+            $('#fq_alert').modal({});
+            return;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            if (file.size > 0 && token != "") {
+                browserMD5File(file, function (err, md5) {
+                    var img_name = md5;
+                    if (md5 != '') {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = function (e) {
+                            if (file.size > 0 && token != "") {
+                                var postfix = file.type.split('/');
+                                img_name = img_name + '.' + postfix[1];
+                                Qiniu_upload(file, img_name, id_value, img_html, token, flag);
+                            } else {
+                                console && console.log("form input error");
+                            }
+                        }
+                    }
+                });
+            } else {
+                console && console.log("form input error");
+            }
+        }
+    }
+    //上传多图
+    // var scr = $("#imgurl").val();
+    var scr = "http://img.fqapps.com";
+    var Qiniu_UploadUrl = "https://up.qbox.me";
+    var Qiniu_upload = function (f, img_name, id_value, img_html, token, flag) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', Qiniu_UploadUrl, true);
+        var formData, startDate;
+        formData = new FormData();
+        formData.append('token', token);
+        formData.append('file', f);
+        formData.append('key', img_name);
+        xhr.onreadystatechange = function (response) {
+            if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "") {
+                var obj = JSON.parse(xhr.responseText);
+                if (obj.key) {
+                    // console.log(obj);
+                    var imgsrc = scr + "/" + obj.key;
+                    if (flag == 0) {
+                        $("#" + id_value).val(imgsrc);
+                        // $('.'+img_html).html('<img src="'+imgsrc+'" width="100px" height="50px"/>');
+                        $('.' + img_html).append('<div class="s-img"><img src="' + imgsrc +
+                            '"><i class="icon close-icon"></i></div>');
+                    } else {
+                        //多图上传
+                        $('.' + img_html).append('<div style="float: left;margin-left: 8px"></span><img src="' +
+                            imgsrc +
+                            '" width="100px" max-height="100px" class="prizeimg" /><input type="hidden" class="zhuimg" value="' +
+                            imgsrc +
+                            '"><span class="am-close am-close-alt am-icon-times" style="display: inherit;margin-left: 30px;margin-top: 5px" onclick="del_img_one(this)"></div>'
+                        );
+                        // $("#"+id_value+flag).val(imgsrc);
+                        // $('.'+img_html).html('<img src="'+imgsrc+'" width="100px" height="50px"/>');
+                    }
+                }
 
+            } else if (xhr.status != 200 && xhr.responseText) {}
+        };
+        startDate = new Date().getTime();
+        xhr.send(formData);
+    };
+</script>
+<script>
+    $(function () {
         // 加载导航部分
         $('#navction').load('nav.html');
-
-        // window.location.href=""
-
 
         // 上传图片按钮样式动效
         $('.upfiles').mouseover(function () {
@@ -274,80 +391,192 @@
             $('.Up-box .add-box .add-icon-one').addClass('hide');
         });
 
-
-
-
-        // 上传图片需要token
-        // ajax_get('/Treasure/getToken', {}, function (r) {
-        //     console.log(r)
-        //     callBack(r, {
-        //         success: function (data) {
-        //             console.log(data);
-        //         }
-        //     })
-        // })
-
-
-        // 上传图片
-        $('.upfiles').change(function (e) {
-            // 文件信息
-            let file = e.currentTarget.files[0]
-            // 文件大小
-            let filesize = file.size / 1024
-            // 文件类型
-            let filetype = file.type
-            //后缀名
-            let type = (filetype.substr(filetype.lastIndexOf("/") + 1)).toLowerCase();
-            // 判断
-            if (type != "jpg" && type != "gif" && type != "jpeg" && type != "png") {
-                alert("您上传图片的类型不符合(.jpg|.jpeg|.gif|.png)！");
-                return false;
-            } else if (filesize > 500) {
-                alert("上传大小不能超过500K.");
-                return false;
-            } else {
-                // 上传方法
-                // upload(file);
-                upLoading(file)
-
-            }
+        // 图片删除
+        $(document).on('click', '.close-icon', function () {
+            $(this).parent().remove()
+            $('#banner_image1').val('');
         })
 
-        function upLoading(e) {
-            console.log(e);
-            console.log(11111);
+        // 分析填写的宝贝链接，获取对应数据
+        $('.link').on('blur', function () {
+            var order_address = $.trim($(this).val());
+            analysis_item_link(order_address);
+        })
+
+        //分析商品链接
+        function analysis_item_link(order_address) {
+            var preg =
+                /http(s)?:\/\/(chaoshi\.detail|item|detail|s\.click)\.(taobao|tmall|yao\.95095|m\.tmall)\.(com|hk)/;
+            var preg_number = /^\+?[1-9][0-9]{3,}$/;
+            // 判断
+            if ($.trim($('#item_link').val()).match(preg) != null && order_address != '') {
+
+            } else {
+                var str = order_address.indexOf('id=');
+                if (str != -1) {
+
+                    var sub_str = order_address.substr(str);
+
+                    var id = $.trim(sub_str.substr(3)); //防止id后面存在&
+
+                    var itemid = id;
+
+                    console.log('宝贝id:', itemid);
+                    $('.bid').val(itemid);
+
+                    var coupon_api_url = 'http://v2.api.haodanku.com/supersearch/apikey/fdsh/keyword/' +
+                        itemid + '/back/10/min_id/1/tb_p/1/sort/0/is_tmall/0/is_coupon/0/limitrate/0'
+
+                    $.get(coupon_api_url, {}, function (res) {
+
+                        var result = JSON.parse(res);
+
+                        console.log(result)
+
+                        if (result.code == '1') {
+
+                            $('.c-link').val(result.data[0].couponurl); //优惠卷链接
+
+                            $('.gname').val(result.data[0].itemshorttitle); //短标题
+
+                            $('.oprice').val(result.data[0].itemprice); //原价
+
+                            //商品主图：
+                            var img_str = '<div class="s-img"><img src="' + result.data[0].itempic +
+                                '"><i class="icon close-icon"></i></div>'
+                            $('.s-img-list').html(img_str);
+                            $('#banner_image1').val(result.data[0].itempic);
+                            $('.price').val(result.data[0].itemendprice); //到手价
+                        }
+                        // else {
+                        //     // alert('链接识别失败！<br/>尝试复制粘贴：https://detail.tmall.com/item.htm?id=(替换成发布宝贝ID)')
+                        //     // // $("#fq_alert_info").html(
+                        //     // //     '链接识别失败！<br/>尝试复制粘贴：https://detail.tmall.com/item.htm?id=(替换成发布宝贝ID)'
+                        //     // // );
+
+                        //     // // $('#fq_alert').modal();11111
+
+                        //     // return;
+
+                        // }
+
+                    });
+
+                } else {
+
+                    // 
+
+                    // if (order_address != '') {
+                    //     // alert('链接识别失败！<br/>尝试复制粘贴：https://detail.tmall.com/item.htm?id=(替换成发布宝贝ID)')
+                    //     // $('.order_warn').html('宝贝地址格式不正确');
+
+                    //     // $("#fq_alert_info").text("宝贝地址格式不正确！");
+
+                    //     // $('#fq_alert').modal();
+
+                    //     // $('#clickurl').val('');
+
+                    // }
+
+                }
+
+            }
+
         }
 
 
         // 立即发布
         $('.snedBtn').on('click', function () {
-            // 获取数据
             // 1.宝贝链接
             let links = $('.link').val();
-            console.log('宝贝链接:', links);
             // 2.优惠券链接
             let clink = $('.c-link').val()
-            console.log('优惠券链接:', clink)
             // 3.短标题
             let gname = $('.gname').val();
-            console.log('短标题:', gname);
             // 4.商品主图数据[数组类型或者拼接]，从隐藏域中获取
-            let himg = $('#upimg').val()
-            console.log('商品主图:', himg);
+            let himg = $('#banner_image1').val()
             // 5.原价
             let oprice = $('.oprice').val()
-            console.log('原价：', oprice)
             // 6.到手价
             let price = $('.price').val()
-            console.log('到手价：', price)
+            // console.log('到手价：', price)
             // 7.佣金比例
             let proportion = $('.proportion').val()
-            console.log('佣金比例：', proportion)
+            // console.log('佣金比例：', proportion)
             // 8.所需人数
             let numbers = $('.numbers').val()
-            console.log('所需人数：', numbers)
+            // 9.开始时间
+            let stime = $('.atime').val();
+            // 判断
+            if (links == '') {
+                alert('请输入宝贝链接！')
+            } else if (clink == '') {
+                alert('请输入优惠券链接！');
+            } else if (gname == '') {
+                alert('请输入短标题！');
+            } else if (himg == '') {
+                alert('请上车商品主图！');
+            } else if (oprice == '') {
+                alert('请输入原价！');
+            } else if (price == '') {
+                alert('请输入到手价！');
+            } else if (proportion == '') {
+                alert('请输入佣金比例！');
+            } else if (numbers == '') {
+                alert('请输入所需人数！');
+            } else if (stime == '') {
+                alert('请输入活动开始时间');
+            } else {
+                $('.cover').removeClass('hides')
+                $('.goodname').text(gname);
+                $('.goodlink').text(links);
+                $('.goodprice').text(oprice);
+                $('.goodcost').text(price);
+                $('.goodnumbers').text(numbers);
+
+            }
+        })
+
+        // 取消按钮
+        $('.canel').on('click', function () {
+            $('.cover').addClass('hides');
+        })
+
+        $('.sure').on('click', function () {
+            let param = {
+                act: 'add',
+                itemlink: $('.link').val(),
+                itemid: $('.bid').val(),
+                couponlink: $('.c-link').val(),
+                name: $('.gname').val(),
+                image: $('#banner_image1').val(),
+                cost_money: $('.oprice').val(),
+                end_money: $('.price').val(),
+                rate: $('.proportion').val(),
+                final_number: $('.numbers').val(),
+                start_time: $('.atime').val()
+            }
+
+            console.log('参数：', param)
+            ajax_post('/Treasure/handleTreasure', param, function (r) {
+                console.log(r);
+                let status = r.code
+                if (status == 200) {
+                    alert('发布成功！')
+                    window.location.reload();
+                }
+            })
 
         })
+
+
+
+
+
+
+
+
+
 
     });
 </script>
